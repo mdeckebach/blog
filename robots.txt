@@ -1,0 +1,4 @@
+Sitemap: https://michaeldeckebach.com/sitemapindex.xml
+
+User-Agent: *
+Host: michaeldeckebach.com
