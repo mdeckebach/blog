@@ -255,6 +255,7 @@ a:-webkit-any-link {
     border-width: 0 0 1px 0;
     border-style: none none solid none;
     border-color: #D2DCEE;
+    overflow-wrap: break-word;
 }
 
 #brand :link,
@@ -478,6 +479,10 @@ header {
 /* centers rst file youtube videos */
 .youtube-video {
     text-align: center;
+}
+
+.youtube-video > iframe {
+    max-width: 100%;
 }
 
 /* SOURCE: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
