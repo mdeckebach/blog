@@ -703,7 +703,7 @@ p {
 #menu,
 #menu_items {
     display: inline-block;
-    width: 49%;
+    width: 39%;
     text-align: right;
 }
 
@@ -870,7 +870,7 @@ html[dir="rtl"] .archivenav .pager .previous {
 #brand {
 	font-size: 2em;
     line-height: 1;
-    width: 49%;
+    width: 59%;
     display: inline-block;
     margin-top: 0px;
     margin-bottom: 0px;
