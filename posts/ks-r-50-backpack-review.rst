@@ -1,0 +1,139 @@
+.. title: KS R-50 Backpack Review
+.. slug: ks-r-50-backpack-review
+.. date: 2018-07-08 15:59:52 UTC-08:00
+.. tags: Hiking, Gear Review
+.. category: 
+.. link: 
+.. description: 
+.. type: text
+
+.. image:: /images/writing/ks-r-50-backpack-review/img-1.jpg
+
+*Note: I dislike “unboxing” reviews because I don’t believe that you can judge a piece of gear until you’ve used it. Instead, gear should be extensively tested before commenting. I hiked and packrafted 1,050 miles with my KS R-50 from December to April along the Greater Patagonia Trail in Chile and Argentina, before writing this article. I paid full price for my R-50 and was not asked or compensated to write this review. All opinions are my own.*
+
+—
+
+Background
+==========
+As `my KS 4 review`_ makes clear, I am a huge fan of that handy little rucksack made by `KS Ultralight`_. However, when plans to packraft the Greater Patagonia Trail solidified last summer, I knew that I would need something with more volume and load-carrying capacity.
+
+So, as every gear-obsessed, devout Ultralighter does, I researched the backpack market ad nauseum and found that when it came to packrafting, there were essentially two options:  the `Hyperlite Porter`_ and `ULA Epic`_. Neither of those options excited me, so I emailed Laurent at KS Ultralight to see what he could do. While not marketed as a “packrafting backpack,” Laurent recommended the `KS Ultralight R-50`_, which his website describes as “a minimalist design for maximum toughness.”
+
+I ordered my R-50 in the fall of 2017 with the following features:
+
+    - Side water bottle pockets
+    - Custom bottom webbing strap placement (moved slightly up to accommodate the water bottle pockets)
+    - Roll top closure with 20 millimeter daisy chain on the shoulder straps (replacing the default Joker Hat Top Closure system)
+    - 20 millimeter top Y-strap (for lashing my packraft)
+    - Removable fabric front panel
+    - Removable frame set
+    - 53 centimeter torso
+  
+In addition, my partner on the trip, K, also purchased an R-50 for our GPT trip. I’ll include her observations in this review, but note that her R-50 had slightly different features:
+
+    - Side water bottle pockets
+    - Custom bottom webbing strap placement (moved slightly up to accommodate water bottle pockets)
+    - Roll top closure with 20 millimeter daisy chain on the shoulder straps (replacing the default Joker Hat Top Closure system)
+    - 20 millimeter top Y-strap (for lashing her packraft)
+    - Navy VX-21 fabric
+    - Removable fabric front panel (Navy VX-21)
+    - Removable frame set
+    - Two removable hip belt pockets
+    - 47 centimeter torso
+
+My R-50 weighs exactly 24.15 oz on my scale, including all removable features.
+
+Overview
+========
+In the four months spent hiking and packrafting along the Greater Patagonia Trail, I put the R-50 through the gamut. It carried 35+ pounds regularly. The VX-21 fabric was tested with off-trail travel and bushwhacking. My pack was lashed to the front of my packraft and soaked daily.
+
+From this experience, I found the R-50 to be an extremely durable pack full of simple, ingenious features that makes it excellent for packrafting. True to KS Ultralight’s philosophy, the R-50 has everything I need for an adventure pack, and nothing more. In fact, I think the R-50’s flexibility is its greatest strength; with removable external storage, frameset, and hip belt pockets, as well as a plethora of attachment points, this pack can be used for anything from rock climbing to cross-country sking—it really is a jack of all trades. However, I also found limitations with the hip belt and frameset, and these drawbacks curtail the pack’s possible applications.
+
+.. figure:: /images/writing/ks-r-50-backpack-review/img-2.jpg
+
+    *KS R-50 with my yellow DIY packraft strapped to the top.*
+
+Size
+====
+The R-50 has a slightly trapezoidal shape, with a narrow bottom that grows wider near the shoulders and opening. It has a curved bottom, which makes calculating the exact volume nearly rocket science. My R-50 is atypical due to the roll-top collar, but I measured its dimensions to be 10.25 x 7.90 x 31.50 inches, or approximately 42 liters in size. KS Ultralight claims the pack is “adjustable up to 45 liters” in volume.
+
+For some people and applications that require a lot of gear, this might be too small. With options such as the back panel, generous hip belt pockets, and good sized water bottle pockets, I was able to pack nine days of food and a full packrafting setup.
+
+Durability
+==========
+After four months of use, the VX-21 fabric has held up great. Neither K’s or my R-50 has any tears or holes, and the laminate doesn’t show signs of peeling or fraying. K’s blue VX-21 has a slightly faded color from the sun, but that’s an aesthetic change and doesn’t affect performance. The shoulder straps are wider on the R-50 than on my KS 4, and as a result they seem to compress less. The hip belt is still plenty thick and I anticipate that this pack has many miles left in it. All the stitching is still solid—I can’t find any ripped or torn seams.
+
+.. figure:: /images/writing/ks-r-50-backpack-review/img-3.jpg
+
+    *After five months of use, the shoulder straps and hip belt are still in good shape. You can also see the removable frame set in this picture.*
+
+Packrafting
+===========
+This section isn’t so much a review as it is an argument:  the R-50 is a great packrafting backpack. Although KS Ultralight doesn’t advertise the R-50 for packrafting (unlike the Hyperlite Porter and ULA Epic), it contains many of the same features. For example, the floating rear panel is similar to the ULA Epic’s system, and the rear daisy chains are nearly identical to the Hyperlite Porter. These features provide ample attachment/lashing points when tying the pack down to a packraft, as well as an easy way to secure wet gear to the outside of the pack. The R-50 is made out of VX-21, a laminate which doesn’t absorb moisture, thus allowing the pack to dry quickly.
+
+Plus, the R-50 tops other packrafting backpacks in two important categories:  weight and customizability. At just around 1.5 pounds, the R-50 is at least a half pound lighter than other packrafting packs. This is due in part to KS’s minimalist design approach as well as the packs smaller volume. With respect to customizability, KS makes it possible to design a pack tailored specifically for your gear. For example, by pairing a fabric back panel to store our wet gear with Y-strap on top to store our rafts, we could go from land to water without even opening our backpacks and in less than 10 minutes (especially useful in the rain).
+
+.. figure:: /images/writing/ks-r-50-backpack-review/img-4.jpg
+
+    *The daisy chains on the back provide ample attachment points, making the R-50 easy to secure when rafting. The pack is highly flexible; stuffing it in a cargo fly would be easy.*
+
+Optional features
+=================
+
+Removable Back Panel
+********************
+For my pack, I had custom removable back panel made in VX-21 instead of the default mesh for additional abrasion resistance. The panel is attached to pack on three sides by shock cord, which can be loosened or tightened to increase or decrease storage capacity, respectably. This floating system I found just as secure as a normal backpack’s back pocket, but providing far more flexibility and volume. With the shock cord fully loosened, I could fit close to ten liters of gear in the rear panel.
+
+One benefit of this floating panel is that you can often pull out objects in the bottom of the rear panel without having to take out everything else first (like you would with a normal backpacking pocket). I found this particularly useful when grabbing snacks or sunglasses while rafting.  Because the panel isn’t sewn in, I was initially concerned that things would fall out, but I have found that the panel tensions easily and holds contents quite securely. Neither K nor I have ever had anything fall out.
+
+.. figure:: /images/writing/ks-r-50-backpack-review/img-5.jpg
+
+    *Here you can see the rear back panel (navy blue) with an* `MLD Trailstar`_ *(brown) and some other odds and ends stuffed inside. Despite it’s expansive size, the rear panel does not fit shoes.*
+
+Water Bottle Pockets
+********************
+For a hiking-heavy trip like the Greater Patagonia Trail, adding water bottle pockets was a no brainer. Laurent was kind enough to move the bottom circular compression strap up above to accomodate for the pockets, and this adjustment worked so well that I recommend anyone considering an R-50 with side pockets do the same. The pockets are well sized—they easily hold a one liter water bottle or (in our case) a four-part Aqua Bound Sting Ray paddle. The pockets are slightly slanted forward to allow access while wearing the pack. The circular compression strap can also be used to tighten around the top of most water bottles, an unintended feature that I found particularly useful when rafting or scrambling so that pockets’ contents don’t fall out.
+
+One other note: due to the location of the circular compression straps, the R-50 can hold extra tall water bottles. This is relevant for desert hiking or situations where additional water capacity is necessary. Using the circular compression straps and water bottle pockets, the pack can securely carry extra tall 2-3 liter water bottles on both sides. While you probably wouldn’t be able to remove the bottles while wearing the pack, this provides a way to carry 4-6 liters of water in a well-distributed way that doesn’t involve a leaking Platypus or gallon milk jug. I am not familiar with any other backpack capable of carrying water quite in this way.
+
+Hip Belt Pockets
+****************
+While the hip belt is standard, K got two removable hip belt pockets and I want to touch on both features very briefly.
+
+I found the hip belt to be well cushioned, but slightly flimsy. It’s also a fixed size, so very skinny people might have trouble tightening it far enough. The hip belt is comfortable to wear.
+
+With respect to the removable hip belt pockets, they’re huge! Each one has roughly one liter of space, which provides plenty of room for storing a phone, camera, small valuables, first aid kit, and snacks. They come with waterproof YKK zippers, and while the pockets themselves are not waterproof (the seams are not taped), K found the pockets to be highly water resistant. The attachment hooks and webbing are well designed, making it easy and secure to attach and detach the pockets. While the extra hardware creates possible failure points, these are by far my favorite hip belt pockets. K’s set weighs 2.50 oz total.
+
+.. figure:: /images/writing/ks-r-50-backpack-review/img-6.jpg
+
+    *Close up of the hip belt attachment system. Two plastic hooks and two sewn in webbing loops make for secure yet easily removable fit.*
+
+Removable Frame Set
+*******************
+KS Ultralight’s frame set—two simple carbon rods that run vertically from each side of the hip belt to a sewn in velcro lashing point is so simple, lightweight, and effective that it makes you wonder why all companies don’t do the same thing. As long as you measure your torso correctly, the frame set transfers weight from the shoulder straps to the hip belt.
+
+That said, such a simple system does have its drawbacks. On K’s pack, one of the velcro fittings that locks in the frame has lost some of its “stickiness.” Especially toward the end of our GPT adventure, her frame would occasionally pop out of the velcro. Over time, as the velcro gets dirtier, I expect this annoyance will only increase. I wouldn’t recommend removing and reinserting the frames frequently for exactly this reason. In retrospect, I might have had Laurent sew the frames directly in instead of using velcro if I didn’t plan on removing them.
+
+Secondly, because the frames are straight, when weight is transferred to the hip belt, the pack has a tendency to fall away from your upper back due to the natural contour of the spine. See the picture below for a better idea:
+
+.. figure:: /images/writing/ks-r-50-backpack-review/img-7.jpg
+
+    *Note how the pack appears to be “falling away” and pulling at my shoulders because I have the hip belt extra tight. This is because a straight frame cannot snugly contour an S-shaped back. I find the pack carries best when weight is split between the waist and shoulders.*
+
+Conventional wisdom says that holding the pack in closer to the torso provides for a better carry. In practice, the straight frame does add a small amount of strain on the front of your shoulders, and a pack that rests closer to your shoulders feels more snug. On the flip side, one unintended benefit of this gap between the pack and back is that it creates good ventilation.
+
+Conclusion
+==========
+KS Ultralight has made a bomber, versatile backpack ideal for a plethora of uses in the R-50. To find such a rugged pack weighing under a pound and a half is impressive. The most popular backpack I know of in the R-50’s weight class is the `ZPacks’ Arc Blast <http://www.zpacks.com/backpacks/arc_blast.shtml>`__, but comparing the two is like comparing apples to oranges. The R-50 is a durable, multi-functional adventure pack, not a one-and-done thru-hiking pack like the Arc Blast.
+
+For these reasons, the R-50 is my go-to recommendation for a bomber, do-it-all, ultralight backpack. The pack is on the small side in terms of volume, but with all the flexible, external attachment options it can easily be expanded to fit more gear. KS Ultralight’s biggest fault is only marketing the R-50 as good for “climbing, hiking, bushcraft, military, winter sports, skiing, snowboarding, snowshoeing, long adventure trips, travel, and duffel bag style use”—It’s also great for packrafting!
+
+.. image:: /images/writing/ks-r-50-backpack-review/img-8.jpg
+
+
+.. _`my KS 4 review`: /writing/ks-4-backpack-review
+.. _`KS Ultralight`: https://www.ks-ultralightgear.com/
+.. _`Hyperlite Porter`: https://www.hyperlitemountaingear.com/hmg-porter-pack.html
+.. _`ULA Epic`: https://www.ula-equipment.com/product/epic/
+.. _`KS Ultralight R-50`: https://www.ks-ultralightgear.com/p/r-50_25.html
+.. _`MLD Trailstar`: https://mountainlaureldesigns.com/product/trailstar/

@@ -1,0 +1,113 @@
+.. title: Te Araroa Resupply Plan
+.. slug: te-araroa-resupply-plan
+.. date: 2017-05-14 22:52:49 UTC-08:00
+.. tags: Te Araroa, Hiking
+.. category: 
+.. link: 
+.. description: 
+.. type: text
+
+.. image:: /images/writing/te-araroa-resupply-plan/img-1.jpg
+
+Overall, Te Araroa (TA) has a plethora of resupply options. The trail goes straight through towns or next to supermarkets frequently, and hitching in New Zealand is quite safe and easy. Towns are abundant on the north island. Thru-hikers typically carry ~2-4 days of food at a time on the north island and ~4-6 days of food on the south island. The longest food carry is usually the Richmond Ranges of the south island (Havelock/Pelorus Bridge to St Arnaud), where some people carry 10 or more days of food.
+
+Having just completed the TA, I thought I would document how I resupplied for the benefit of future hikers. I didn’t research trail towns before starting, opting instead to figure it out as I went. While that worked, some people might benefit from more planning.
+
+Some considerations: I like to carry as little food as possible and don’t mind hitchhiking as long as it doesn’t take too long. I will visit any town within a couple kilometers of a trail. I don’t like sending food boxes; I prefer to buy-as-you-go. On the TA I didn’t have a stove, so I can’t speak to the availability of denatured alcohol or gas canisters—though I never heard of hikers having difficulty finding fuel. I eat the typical hiker diet (oatmeal, cookies, wraps, peanut butter, couscous, chocolate).
+
+A (Retrospective) Te Araroa Resupply Plan
+=========================================
+
+Basically, there are four major supermarket chains in New Zealand: Countdown, PAK’nSAVE, New World, and Four Square. There are a couple others like SuperValue and Fresh Choice, but these four are the most common. Countdown is a large, conventional supermarket—my preferred option. PAK’nSAVE is also large and has more of a “warehouse” vibe. New World can vary in size and is typically more expensive. Four Squares can be anything from a full supermarket to a tiny convenience store–either way prices will usually be inflated. Finally, every town has at least one “dairy,” which is a corner store that sells candy, chips, and soda, and often has a grill. I have not included dairies in this plan because there are too many of them to count and they don’t make for a good resupply. They do make great lunch stops.
+
+NORTH ISLAND
+============
+
+**Cape Reinga (KM 0.0)** | I bought my first resupply in Auckland then bussed up to the start of the trail. This worked well as there’s nothing whatsoever at Cape Reinga.
+
+**Ahipara (KM 102.4)** | I opted to hitch to Kaitaia, where there was a PAK’nSAVE. Hitching was easy on the way there, but it took me a little time to get back. The dairy in Ahipara seemed shady and expensive. For the tough upcoming stretch through the Northland Forests, I wanted a proper supermarket and full selection.
+
+**Mangamuka Dairy (KM 161.2)** | I know I said I wouldn’t list dairies, but I’m going to break my rule. Halfway through the Northland Forests, this place was a godsend. I arrived by lunch to find a working grill and enough snacks to get me to Kerikeri. This stretch took longer than expected, so I would have gone very hungry until Kerikeri if it wasn’t for this surprise.
+
+**Kerikeri (KM 221.4)** | A full-service town, Kerikeri has both a Countdown and New World. I resupplied from the Countdown before heading out. I had also sent my bounce box here in case I wanted to switch out any gear. I figured if I needed to change anything, it would probably be in the first couple hundred kilometers and this was the first major PO along the trail. The package pickup was only open for a couple hours a day, so I was lucky to go while it was open.
+
+**Paihia (KM 246.7)** | I stayed down at Beachside (KM 249.9) but had to take a zero (a day off from hiking during which you log zero miles/kilometers) to organize my kayak for the Waikare Inlet, so I hitched back to Paihia to resupply. There are actually two Countdowns in Paihia. The first is small, expensive, and listed on Guthooks. The second is larger and where the locals shop. The address is 9 Black Bridge Rd—turn inland and walk about two blocks right before Paihia’s shopping district.
+
+.. figure:: /images/writing/te-araroa-resupply-plan/img-2.jpg
+    
+    *Walking the final kilometers down to Bay of Islands, you can just see Paihia off to the right.*
+
+**Nguruguru (KM 336.6)** | Originally, I planned to resupply here, but with all the grills and corner stores since Paihia I didn’t really need much. I bought some extra snacks (because you can never have too many snacks). The Four Square was expensive. I would avoid doing a full resupply here if possible. Another option is to hitch to Whangarei.
+
+**Ruakaka (KM 405ish)** | Inland from the trail about a kilometer there is a SuperValue and a Fresh Choice right along the main highway. This would have been a great place to resupply, but I was basically living dairy to dairy and had hardly touched my food bag, so I decided to wait to get food in Waipu.
+
+**Waipu (KM 418.6)** | The Four Square is maybe 50m off the trail. It was disappointingly small and expensive. I regretted my decision to delay resupplying in Ruakaka—I’m not sure those extra 13km of empty-pack hiking were worth it.
+
+.. figure:: /images/writing/te-araroa-resupply-plan/img-3.jpg
+    
+    *“One Square Meal” bars are healthy, energy packed (~400 cal) bars found throughout NZ supermarkets. While not cheap, they’re more affordable than Cliff Bars.*
+
+**Mangawhai (KM 453.2)** | Again, I strolled in mid-morning with an empty pack and went straight to the bakery for breakfast. There was all sorts of activity and a number of eateries to pick from. The Four Square was the only grocery as far as I could tell (it’s a two-block town), so I bought a couple more days of food and repackaged it while doing some people watching.
+
+**Warkworth (KM 501.8)** | The Dome Cafe sits right along the trail where it crosses the road. Unfortunately, I arrived on Christmas Eve so the restaurant was closed. I hitched into Warkworth and resupplied at the large New World there. It’s a fast highway with a small shoulder, but the hitch was only 8-10km. This was the first full supermarket since Paihia.
+
+**Auckland Airport (KM 625.9)** | There are all sorts of restaurants and takeaways between Warkworth and Auckland. At KM 594 I took the Devonport Ferry across the bay to Auckland City, where the food options were overwhelming. Instead of resupplying in the city, I decided to do a bit of a food tour as I walked, which seemed a lot more appetizing than cold soaked ramen noodles. I did have to stop in town to pick up my bounce box, which was a bit difficult because there are multiple post offices in the city. In retrospect, sending it to Hamilton might have been easier. Anyway, knowing there was a Countdown near the airport, I waited to shop until I got there. This ended up being a great move as it got me out of the city and the Countdown was right along the trail.
+
+**Hamilton (KM 800ish)** | There are a number of small towns between Auckland and Hamilton (e.g., Rangiri, Huntly, Mercer). I snacked or lunched in each of them, but chose to do my next full resupply in Hamilton. I shopped at the PAC’nSAVE in town—there was also a Countdown. The walk out of Hamilton stretches on through suburbs and industrial districts for quite some time, and I passed a couple additional supermarkets with my pack already full.
+
+**Te Kuiti (KM 912.0)** | This was a great town for me, with all the desirable takeaways and hot food options as well a New World. I think there was a SuperValue as well, but the New World was large and reasonably priced, so I shopped there. Even more convenient, I called up Don’s Backpacker Hostel to stay for the night, and they picked me up and dropped me off right in front of the New World. It’s right on the trail, so you can’t miss it.
+
+**Taumarunui (KM 1051.5)** | Taumarunui was about the same size as Te Kuiti and had a similar, large New World and a bunch of restaurants. I took a reluctant zero to sort out my canoe rental for the Whanganui River. I ended up going with Blazing Paddles, which seemed to be the most popular choice and caters to the large-group-of-thru-hikers niche in the canoe rental market. I bought all my food for the river in Taumarunui, left it at the Taumarunui Holiday Park, and Blazing Paddles picked it up and brought it to the boat launch for me. In retrospect, I wish I would have bought more drinks and treats for canoeing—they give you two big barrels per person to strap down in your canoe, so there’s plenty of room for popcorn, chips, soda, beer, etc.
+
+.. figure:: /images/writing/te-araroa-resupply-plan/img-4.jpg
+    
+    *Pictured above are hiker-paddlers and the water-tight barrels used to store food on the Whanganui River. As  you can tell, a good supply of food and drinks is necessary for the hard days on the river.*
+
+**Whanganui (KM 1376.4)** | The distance between Taumarunui and Whanganui wasn’t as long as it seems because of the river portion. Also, you could get snacks or a meal (but not resupply) in Owhango, National Park, and Papriki along the way. Regardless, Whanganui was a large full-service town. Like the other “big” New Zealand cities, Whanganui had both a PAC’nSAVE and a Countdown.
+
+**Bulls (KM 1432.7) and Fielding (KM 1453.5)** | The hike from Whanganui to Palmerston North was probably my least favorite section of the trail, but at least I didn’t have to carry much food. I didn’t resupply in Bulls or Fielding, but it would be misleading to suggest I carried food from Whanganui to Palmerston North. Instead, I stopped in at fast food chains like Subway and Pizza Hut as I walked. The trail goes straight through Bulls and right along the outskirts of Fielding. You can easily resupply in both.
+
+**Palmerston North (KM 1468.6)** | There was a Countdown right along the trail on the outskirts of Palmerston North, but I skipped it and decided to walk through the city center. It’s probably a 5km detour to get to the town square, but I exited town to the south and picked back up the trail at Fitzherbert Bridge (KM 1476.7), so it hardly added any distance. I found a big indoor mall along the southern edge of the town square with a large Countdown where I resupplied.
+
+**Levin (KM 1541.3)** | Levin was a bit out of the way so a lot of people skip it, but I decided to make a quick trip in. It’s a bad spot to hitch to and from—the trailhead is a remote forest road and it’s not a straight shot to town. There was no traffic when I arrived around 6:30pm, so I had to walk 3-4 kilometers before a farmer finally came along and gave me a lift. Worried that I wouldn’t make it back before dark, I rushed in and out of the New World (decent sized) before heading back to the trailhead. Apparently there’s also a Countdown, but I didn’t have time to look.
+
+**Waikanae (KM 1610.6)** | Once past the Tararuas, I hardly carried any food the rest of the way to Wellington. Waikanae had a full-sized New World and Countdown. I grabbed some snacks from the Countdown on my way out of town.
+
+**Porirua (KM 1656.0)** | A large town with all the fast food chains, I passed within view of the PAC’nSAVE and stopped in at the Countdown about a block off trail to grab a couple more snacks. There was a large mall just a bit further along where I stopped for lunch.
+
+SOUTH ISLAND
+============
+
+**Picton (KM 1702.0)** | You’ll notice I didn’t list Wellington, because while I did spend a day there, I didn’t resupply. I knew that I had to mail a food box for the upcoming sections and figured it would be cheaper to mail my box intra-south island as opposed to from Wellington. Once in Picton, I found a tiny, expensive Four Square that I feared was my only option until I discovered the Fresh Choice farther up the street. This was much more adequate and actually convenient because the post office is right inside. I bought all my food for the current stretch then sent an additional box of food ahead to St Arnaud, which ended up costing something like $8 NZD to mail.
+
+.. figure:: /images/writing/te-araroa-resupply-plan/img-5.jpg
+    
+    *Do these exist in America? They should. Resealable olives weigh little and add a lot of flavor.*
+
+**Havelock (KM 1787.1)** | A tiny, one-main-street kind of town with some charm. There is a single, small Four Square that’s your only option. It’s not a proper supermarket and has maybe 3-4 small rows of groceries. Everything was marked up considerably, so for the long stretch through the Richmond Ranges I think I spent something ridiculous like $150. I’m not sure if sending a box from Picton would have arrived here in time, but it would have been cheaper and is something to consider if you don’t mind moving slower. I also think some people hitched all the way to Nelson, which in retrospect might have been a smarter (albeit time-consuming) move.
+
+**St Arnaud (KM 1945.1)** | Like I said, I mailed myself a package from Picton to the Travers Sabine Lodge. The lodge waived their holding fee because I stayed for a night. This worked well. *[Update 10/2018: The Travers Sabine Lodge is no longer accepting packages for hikers].* There’s a single general store in town which actually had better selection than Havelock’s Four Square (more tailored towards hikers). You could resupply here if you don’t want to hitch, but you’ll have to be flexible and pay a markup. The grill inside and takeaway next door were both excellent.
+
+**Hanmer Springs (KM 2060.6)** | The trail exited the forest at a place called Boyle Village, which really wasn’t much more than an outdoor center. Many people sent boxes there, and it looked like the center was friendly if you had a package to pick up. I elected to hitch along Highway 7 to Hanmer Springs. It was a long ~60km hitch and took a couple hours. Note that Highway 7 was busier than usual this year because Highway 1 (the coastal route from Christchurch to Picton) was closed due to landslides. There might be less traffic along Highway 7 in the future. Hanmer Springs was a decent-sized town with plenty of restaurants and takeaways but only one supermarket: a Four Square. It was quite large and had good selection.
+
+**Arthur’s Pass (KM 2173)** | A tiny tourist stop for campervans heading east or west, this is probably the second most popular place people send food boxes (besides St Arnaud). I understood why upon arrival. Looking at the single shelf of expensively priced car camping food, I thought to myself, “this is going to be interesting.” I made it work, but it helped that I only needed ~2 days of food to get to the next resupply. An alternative would have been to hitch all the way to Greymouth or Christchurch, but that seemed like a lot of time and energy for two days of food.
+
+**Methven (KM 2245.0)** | Methven is actually quite far off the trail. KM 2245 was Lake Coleridge, which is a small settlement without any food options. The trail discontinues here due to the Rakaia River, which the TA Trust has declared a hazard zone. Unless you have a packraft, the only options are to hitch or walk around, so I hitched to the closest town: Methven. There’s very little traffic in Lake Coleridge, but I got extremely lucky to be picked up within minutes. It still took me a couple rides and some time to make it to Methven. A decent sized town with multiple pubs and restaurants, there were two good-sized supermarkets: a New World and a SuperValue. One nice thing about Methven is that you can pay to take the local school bus to the trailhead on the other side of the Rakaia River in the morning–ask the i-Site for details.
+
+**Lake Tekapo (KM 2389.0)** | Lake Tekapo is sort of a psychological milestone, as it marks the end of the “where will my next resupply come” uncertainty that is the first half of the south island. From here onward, supermarkets are more frequent and located closer to the trail. Lake Tekapo is a little tourist town located right on the lake, complete with one Four Square. The store is not very large and was super crowded, but I thought the prices were normal and it stocked most of the essentials.
+
+**Twizel (KM 2443.1)** | The town square of Twizel is half a kilometer west of the trail, but it’s well worth the walk. There are two Four Squares in town; the one on Market Pl seemed to be larger. Both are adequate for resupply. There are also a number of bakeries and restaurants in town.
+
+**Wanaka (KM 2584.6)** | Wanaka is a fairly large tourist town. It’s beautiful and located right on the water, but was buzzing with backpackers and tourists when I got there. There’s a large New World located in town, just a couple blocks off the lake front. I found prices to be reasonable, and this probably would have been one of my favorite resupplies if the store wasn’t so crowded. There was also a smaller Four Square but I didn’t go there.
+
+.. figure:: /images/writing/te-araroa-resupply-plan/img-6.jpg
+    
+    *The most photographed tree in New Zealand. Te Araroa passes it on the way out of Wanaka.*
+
+**Frankton (KM 2667ish)** | Frankton is a suburb of Queenstown (it’s where the airport is). It was also the much better place to resupply (the Four Square in Queenstown is small and quite expensive). Right along the main highway, the trail passes a PAC’nSAVE and then a Countdown. I shopped at the PAC’nSAVE because I didn’t know the Countdown existed, but both are full supermarkets with good selection. With my pack full, I quickly passed through Queenstown and continued on around Lake Wakatipu.
+
+**Te Anau (KM 2772.2)** | I hitched along Highway 94 about 30km west to the town of Te Anau. The road is fast, but it’s a straight shot into town so I didn’t have too much trouble getting a ride. Te Anau is “the gateway to the Fiordlands” and has plenty of restaurants and takeaways. There’s a tiny Four Square and a large Fresh Choice, which is where I resupplied. It had good selection and prices. Hitching out proved to be more difficult. I waited for hours at the edge of town before someone stopped. You might have better luck the farther out of town you go.
+
+**Otautau (KM 2859.2)** | I waited for a couple hours along this rural highway until someone finally stopped to pick me up. The road was paved and traffic was frequent, so maybe I just had bad luck. Otautau was one of those one-main-street kind of small towns. I resupplied at the Four Square, which was little more than a convenience store so selection was slim. Later, I heard there was a SuperValue farther into town; it might have been a better option but I didn’t check.
+
+**Riverton (KM 2932.3) and Invercargill (KM 2964.0)** | I skipped both these popular resupply options because my friends concocted a crazy plan to hike the last 70km in a single day. Both would have had adequate supermarkets. There was a Four Square on the road before Invercargill (KM 2960ish) where I grabbed a couple extra snacks to get me to the end.

@@ -1,0 +1,10 @@
+[Theme]
+engine = jinja
+parent = base-jinja
+author = Michael Deckebach
+author_url = https://michaeldeckebach.com
+license = MIT
+
+[Family]
+family = base
+jinja_version = base-jinja

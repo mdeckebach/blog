@@ -1,0 +1,586 @@
+
+
+/* Copyright © 2021 Michael Deckebach */
+
+@charset "UTF-8";
+
+/*
+	Copyright © 2014-2020 Daniel Aleksandersen and others.
+
+	Permission is hereby granted, free of charge, to any
+	person obtaining a copy of this software and associated
+	documentation files (the "Software"), to deal in the
+	Software without restriction, including without limitation
+	the rights to use, copy, modify, merge, publish,
+	distribute, sublicense, and/or sell copies of the
+	Software, and to permit persons to whom the Software is
+	furnished to do so, subject to the following conditions:
+
+	The above copyright notice and this permission notice
+	shall be included in all copies or substantial portions of
+	the Software.
+
+	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY
+	KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+	WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+	PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS
+	OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR
+	OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+	OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+	SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+	color: #4F5151;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 1em;
+	line-height: 1.4;
+	padding: 1em;
+}
+
+h1, h2 {
+    margin-block-start: 0.83em;
+    margin-block-end: 0px;
+}
+
+p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+#container {
+	margin: 1em auto;
+	max-width: 720px;
+}
+
+#menu,
+#menu_items {
+    display: inline-block;
+    width: 39%;
+    text-align: right;
+}
+
+#menu ul,
+#menu ul li,
+.postpromonav .tags,
+.postpromonav .tags li,
+.pager,
+.pager li,
+#toptranslations ul,
+#toptranslations ul li {
+	list-style: none;
+	padding-left: 0;
+    padding-right: 0;
+}
+
+#toptranslations ul {
+	display: inline;
+}
+
+#menu ul li,
+#toptranslations ul li {
+	display: inline-block;
+	margin-right: 1.5em;
+}
+
+#toptranslations h2 {
+	display: inline;
+	font-size: 1em;
+	margin-right: 1.5em;
+}
+
+html[dir="rtl"] #menu ul li,
+html[dir="rtl"] #toptranslations ul li,
+html[dir="rtl"] #toptranslations h2 {
+	margin-left: 1.5em;
+	margin-right: 0;
+}
+
+#toptranslations {
+	text-align: right;
+	float: right;
+}
+
+html[dir="rtl"] #toptranslations {
+	text-align: left;
+	float: left;
+}
+
+.posttranslations h3, .translationslist h3 {
+	display: inline;
+	font-size: 1em;
+}
+
+.entry-title {
+	font-size: 2em;
+}
+
+.posttranslations h3:last-child, .translationslist h3:last-child {
+	display: none;
+}
+
+.postindex article {
+	border-bottom: 1px solid #4F5151;
+	padding-bottom: 1em;
+}
+
+/* Tags */
+.postpromonav,
+.postpromonav .tags {
+	text-align: left;
+}
+.metadata p:before,
+.postpromonav .tags li:before,
+.postlist .listdate:after,
+.translationslist p:before {
+	content: " - ";
+}
+.postlist li {
+    margin-bottom: .33em;
+    list-style-type: none;
+}
+.byline a:not(:last-child):after {
+	content: ",";
+}
+
+/* Post and archive pagers */
+.postindexpager .pager .next:before {
+	content: "↓ ";
+}
+.postindexpager .pager .previous:before,
+.archivenav .pager .up:before {
+	content: "↑ ";
+}
+.postpromonav .pager .next:after,
+.archivenav .pager .next:after {
+	content: " →";
+}
+html[dir="rtl"] .postpromonav .pager .previous:after,
+html[dir="rtl"] .archivenav .pager .previous:after {
+	content: " →";
+}
+.postpromonav .pager .previous:before,
+.archivenav .pager .previous:before {
+	content: "← ";
+}
+html[dir="rtl"] .postpromonav .pager .next:before,
+html[dir="rtl"] .archivenav .pager .next:before {
+	content: "← ";
+}
+html[dir="rtl"] .postpromonav .pager .next:after,
+html[dir="rtl"] .archivenav .pager .next:after,
+html[dir="rtl"] .postpromonav .pager .previous:before,
+html[dir="rtl"] .archivenav .pager .previous:before {
+	content: "";
+}
+.metadata p:first-of-type:before,
+.postpromonav .tags li:first-of-type:before,
+.translationslist p:first-of-type:before {
+	content: "";
+}
+.postpromonav .pager {
+	clear: both;
+	height: 1em;
+}
+.postpromonav .tags li,
+.postpromonav .pager li,
+.archivenav .pager li {
+	display: inline-block;
+}
+.archivenav .pager {
+	text-align: center
+}
+.postpromonav .pager .next,
+.archivenav .pager .next {
+	float: right;
+}
+html[dir="rtl"] .postpromonav .pager .next,
+html[dir="rtl"] .archivenav .pager .next {
+	float: left;
+}
+
+.postpromonav .pager .previous,
+.archivenav .pager .previous {
+	float: left;
+}
+html[dir="rtl"] .postpromonav .pager .previous,
+html[dir="rtl"] .archivenav .pager .previous {
+	float: right;
+}
+
+.archivenav .pager .disabled,
+.archivenav .pager .disabled a,
+.archivenav .pager .disabled:link {
+	color: #888;
+	cursor: not-allowed;
+}
+
+.metadata p,
+.translationslist p {
+	display: inline;
+}
+
+#brand {
+	font-size: 2em;
+    line-height: 1;
+    width: 59%;
+    display: inline-block;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    vertical-align: middle;
+}
+
+/* Links */
+:link {
+    color: inherit;
+}
+
+:link:visited {
+    color: #4C74B9;
+}
+
+:link:hover, :visited:hover {
+    border-color: #4C74B9;
+}
+
+a:-webkit-any-link {
+    color: #4C74B9;
+    text-decoration: none;
+    border-width: 0 0 1px 0;
+    border-style: none none solid none;
+    border-color: #D2DCEE;
+    overflow-wrap: break-word;
+}
+
+#brand :link,
+#brand :visited {
+    color: inherit;
+    border-style: none;
+}
+
+#brand :hover {
+    color: #4C74B9;
+}
+
+/* Adventures Page */
+.adventure-container {
+    margin-top: 1em;
+    display: block;
+}
+
+.adventure-pic {
+    display: none;
+}
+
+.adventure-text {
+    display: inline-block;
+}
+
+.adventure-button {
+    margin-bottom: 0.5em;
+}
+
+.adventure-link:any-link,
+.adventure-link:any-link:link,
+.adventure-link:any-link:visited {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 0.5em;
+    color: white;
+    background-color: #999;
+    text-align: center;
+    border-width: 0;
+}
+.adventure-link:any-link:hover {
+    background-color: #4C74B9;
+}
+
+@media only screen and (max-width: 600) {
+    .adventure-text {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 601px) {
+    .adventure-container {
+        overflow: hidden;
+    }
+    
+    .adventure-pic {
+        display: inline;
+        float: left;
+        width: 31%;
+    }
+
+    .adventure-text {
+        float: left;
+        width: 63%;
+        margin-left: 1em;
+    }
+    
+    .adventure-button {
+        float: left;
+        width: 31%;
+        margin-right: 0.5em;
+    }
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+    border: none;
+	line-height: 1;
+}
+
+.postpage img,
+.postpage object,
+.postindex article img,
+.postindex article object {
+	height: auto;
+	max-width: 100%;
+}
+
+/* Comment helpers */
+#disqus_thread {
+	min-height: 325px;
+}
+
+.breadcrumb {
+	padding: 8px 15px;
+	margin-bottom: 20px;
+	list-style: none;
+}
+
+.breadcrumb > li {
+	display: inline-block;
+	margin-right: 0;
+	margin-left: 0;
+}
+
+.breadcrumb > li:after {
+	content: ' / ';
+	color: #888;
+}
+
+.breadcrumb > li:last-of-type:after {
+	content: '';
+	margin-left: 0;
+}
+
+.thumbnails {
+	list-style: none;
+	padding: 0;
+}
+
+.thumbnails > li {
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.thumbnails > li:last-of-type {
+	margin-right: 0;
+}
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
+}
+
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
+	position: static;
+	width: auto;
+	height: auto;
+	margin: 0;
+	overflow: visible;
+	clip: auto;
+}
+
+pre.code, code {
+	white-space: pre-wrap;
+	word-wrap: normal;
+	overflow: auto;
+}
+
+header {
+    margin-bottom: 1em;
+}
+
+#footer {
+    margin-top: 1em;
+}
+
+/* used by md files for centering images */
+.centered {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+/* used by rst files for centering images */
+.figure {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+/* used by rst files for coloring text red */
+.color-red {
+    color: red;
+}
+
+/* styling for ..contents:: table of contents */
+
+.contents.table-of-contents {
+    margin-left: 0;
+    margin-right: 0;
+}
+.table-of-contents > ul {
+    list-style-type: none;
+    margin-left: 1em;
+}
+
+.table-of-contents > ul > li > ul {
+    list-style-type: none;
+    margin-left: 1em;
+}
+
+/* styling for ..list-table:: */
+.condensed-table {
+    border-collapse: collapse;
+}
+.condensed-table > thead > tr > th > p {
+    margin-bottom: 0;
+}
+.condensed-table > tbody > tr > td > p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.banded-rows > tbody > tr:nth-child(odd) {
+    background: #eee
+}
+
+/* centers rst file youtube videos */
+.youtube-video {
+    text-align: center;
+}
+
+.youtube-video > iframe {
+    max-width: 100%;
+}
+
+/* SOURCE: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
+@media print {
+	*,
+	*:before,
+	*:after {
+		background: transparent !important;
+		color: #000 !important; /* Black prints faster: http://www.sanbeiji.com/archives/953 */
+		box-shadow: none !important;
+		text-shadow: none !important;
+		font-family: Garamond, Junicode, serif;
+	}
+
+	body {
+		font-size: 12pt;
+	}
+
+
+	a[href]:after {
+		content: " (" attr(href) ")";
+	}
+
+	abbr[title]:after {
+		content: " (" attr(title) ")";
+	}
+
+	/*
+	 * Don't show links that are fragment identifiers,
+	 * or use the `javascript:` pseudo protocol
+	 */
+
+	a[href^="#"]:after,
+	a[href^="data:"]:after,
+	a[href^="javascript:"]:after {
+		content: "";
+	}
+
+	pre,
+	blockquote {
+		border: 1px solid #999;
+		page-break-inside: avoid;
+	}
+
+	/*
+	 * Printing Tables:
+	 * http://css-discuss.incutio.com/wiki/Printing_Tables
+	 */
+
+	thead {
+		display: table-header-group;
+	}
+
+	tr,
+	img {
+		page-break-inside: avoid;
+	}
+
+	img {
+		max-width: 100% !important;
+	}
+
+	p,
+	h2,
+	h3 {
+		orphans: 3;
+		widows: 3;
+	}
+
+	h2,
+	h3 {
+		page-break-after: avoid;
+	}
+
+	.hidden-print {
+		display: none !important;
+	}
+
+	article .entry-title a[href]:after,
+	article .metadata a[href]:after,
+	article .tags a[href]:after {
+		content: "";
+	}
+
+	article .metadata .sourceline {
+		display: none;
+	}
+
+	article .metadata .linkline a[href]:after {
+		content: " (" attr(href) ")";
+	}
+
+	#header {
+		display: none;
+	}
+
+	.postpromonav {
+		padding: 0;
+	}
+
+}
