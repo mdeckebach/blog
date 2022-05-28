@@ -15,3 +15,5 @@ themes
 .doit.db.dir
 .nojekyll
 conf.py
+.gitignore
+.python-version
