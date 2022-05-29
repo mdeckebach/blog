@@ -14,6 +14,6 @@ About Me
 
 Originally from Ohio, I majored in History and Religious Studies at the `University of Pittsburgh <https://www.honorscollege.pitt.edu/michael-deckebach>`_. After graduating, `I started to thru-hike <./adventures/>`_.
 
-Professionally, I worked in `marketing research <https://glm.com/>`_ before moving to Reno, NV, where I currently work as an analyst with `Patagonia's customer insights and analytics team <https://www.patagonia.com/>`_. In my free time, you can find me exploring the Eastern Sierra on foot or ski.
+Professionally, I worked in `marketing research <https://glm.com/>`_ before moving to Reno, NV, where I currently work with `Patagonia's customer insights team <https://www.patagonia.com/>`_. In my free time, you can find me exploring the Eastern Sierra on foot or ski.
 
-I also like tea, to-do lists, and `indie folk music <https://open.spotify.com/playlist/6yegJvVzzKYZlPDodWYZUS>`_.   
+I also like tea, TODO lists, and `indie folk music <https://open.spotify.com/playlist/6yegJvVzzKYZlPDodWYZUS>`_.   
