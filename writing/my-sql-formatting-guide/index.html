@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html prefix="
+        og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+    " vocab="http://ogp.me/ns" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>My SQL Formatting Guide | Michael Deckebach</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#3e5042">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="canonical" href="https://michaeldeckebach.com/writing/my-sql-formatting-guide/">
+<link rel="icon" href="../../files/favicon-16x16.png" sizes="16x16">
+<!--[if lt IE 9]><script src="../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-8HE6SJQ79H"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8HE6SJQ79H');
+</script><meta name="author" content="Michael Deckebach">
+<link rel="prev" href="../pauls-tableau-dashboard/" title="Paul's Tableau Dashboard" type="text/html">
+<link rel="next" href="../trip-report-wind-river-high-route/" title="Trip Report: Wind River High Route" type="text/html">
+<meta property="og:site_name" content="Michael Deckebach">
+<meta property="og:title" content="My SQL Formatting Guide">
+<meta property="og:url" content="https://michaeldeckebach.com/writing/my-sql-formatting-guide/">
+<meta property="og:description" content="Introduction
+My current opinions on SQL formatting. Will update as preferences change.
+
+
+1. Lowercase keywords
+
+IntelliSense on modern IDEs makes capitalization obsolete.
+
+
+select pk from orders = goo">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2022-08-10T15:20:34-07:00">
+<meta property="article:tag" content="Data">
+<meta property="article:tag" content="SQL">
+</head>
+<body>
+    <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+    <div id="container">
+            <header id="header"><h1 id="brand"><a href="../../" title="Michael Deckebach" rel="home">
+
+        <span id="blog-title">Michael Deckebach</span>
+    </a></h1>
+
+        
+            <nav id="menu"><ul>
+<li><a href="../../adventures/">Adventures</a></li>
+                <li><a href="../">Writing</a></li>
+
+    
+    
+    
+    </ul></nav></header><main id="content"><article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name" itemprop="headline name"><a href="." class="u-url">My SQL Formatting Guide</a></h1>
+
+        <div class="metadata">
+            <p class="dateline">
+                2022-08-10
+            </p>
+            <aside class="postpromonav"><ul itemprop="keywords" class="tags">
+        Tags: 
+            <li><a class="tag p-category" href="../../categories/data/" rel="tag">Data</a></li>
+            <li><a class="tag p-category" href="../../categories/sql/" rel="tag">SQL</a></li>
+        </ul></aside>
+</div>
+        
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <section id="introduction"><h2>Introduction</h2>
+<p>My current opinions on SQL formatting. Will update as preferences change.</p>
+</section><section id="lowercase-keywords"><h2>1. Lowercase keywords</h2>
+<div class="line-block">
+<div class="line">IntelliSense on modern IDEs makes capitalization obsolete.</div>
+<div class="line"><br></div>
+<div class="line-block">
+<div class="line">
+<code class="docutils literal">select pk from orders</code> = good</div>
+<div class="line">
+<code class="docutils literal">SELECT pk FROM orders</code> = bad/unnecessary</div>
+<div class="line">
+<code class="docutils literal">sElEcT pk fRoM orders</code> = insane</div>
+</div>
+</div>
+</section><section id="indentation"><h2>2. Indentation</h2>
+<p>Clauses should always be at the same level of indentation. Single-item clauses can appear on one line, while clauses with multiple items should be listed on subsequent lines. For example:</p>
+<pre class="literal-block">select
+    id
+    ,amount
+    ,date
+from orders</pre>
+<p>Because the select clause is comprised of multiple items, so each appears indented on its own line. Contrast that with the from clause, which is only selecting from a singular table. Thus a single-line from clause is acceptable.</p>
+</section><section id="joins"><h2>3. Joins</h2>
+<p>I like to put joins on a singular line, including the on clause, like so:</p>
+<pre class="literal-block">from
+    orders as o
+    left join customers as c on o.customer_id = c.customer_id</pre>
+</section><section id="consistent-naming"><h2>4. Consistent naming</h2>
+<p>A pk/fk should be consistently named across tables to make joins obvious.</p>
+</section><section id="snake-case-for-field-names"><h2>5. snake_case for field names</h2>
+<div class="line-block">
+<div class="line">snake_case is easier to read than camelCase. Also, spell things out rather than using cryptic acronyms. For example:</div>
+<div class="line"><br></div>
+<div class="line-block">
+<div class="line">
+<code class="docutils literal">select order_net_amount_with_tax from orders</code> = good</div>
+<div class="line">
+<code class="docutils literal">select orderNetAmountWithTax from orders</code> = bad</div>
+</div>
+</div>
+</section><section id="prefer-ctes-over-sub-queries"><h2>6. Prefer CTEs over sub-queries</h2>
+<p>CTEs organize logic into modular, re-usable packages. The ability to name a CTE makes it easier for future developers to understand what you were going for than reading a cryptic sub-query.</p>
+</section><section id="good-ctes-reduce-the-need-for-comments"><h2>7. Good CTEs reduce the need for comments</h2>
+<p>Construct small, atomic CTEs with clear names, and comments are surprisingly rarely necessary.</p>
+</section><section id="never-use-in-a-final-select"><h2>8. Never use * in a final select</h2>
+<p>While I use <code class="docutils literal">select *</code> during data exploration, it should never be used in production code. Putting in a wildcard in a final <code class="docutils literal">select</code> allows for new fields to flow through your SQL if they are added to upstream tables, which can break things. Always explicitely list out the fields you want to return.</p>
+</section><section id="leading-commas"><h2>9. Leading commas</h2>
+<p>A hotly-contested matter of personal preference, I've come to embrace putting commas before fields for two reasons:</p>
+<blockquote>
+<ol class="arabic simple">
+<li><p>I find that I am more likely to remove / comment out a nth item in a select clause than the 1st. This is easier to do with leading commas.</p></li>
+<li><p>Commas are an annoying source of syntax errors. By lining all your commas up vertically, it is easier to see what is missing. I find this makes debugging quicker/easier.</p></li>
+</ol>
+</blockquote>
+<p>Compare the following:</p>
+<pre class="literal-block">SELECT
+    pk,
+    name,
+    age,
+    birthdate,
+FROM
+    customers</pre>
+<p>vs</p>
+<pre class="literal-block">SELECT
+    pk
+    ,name
+    ,age
+    ,birthdate
+FROM
+    customers</pre>
+<p>Did you even notice that the first example is incorrect?</p>
+</section><section id="avoid-quotation-marks"><h2>10. Avoid quotation marks</h2>
+<p>SQL allows the use of quotation marks to include spaces in table or column names. Only a mad man would do that. Stick to camel_case.</p>
+</section><section id="avoid-abbreviations"><h2>11. Avoid abbreviations</h2>
+<p>I alluded to this in #5, but spelling things out for clarity is more important than saving horizontal space on the screen. Clarity should be top priority when writing SQL. For example:</p>
+<blockquote>
+<ul class="simple">
+<li><p><code class="docutils literal">count_orders</code> is better than <code class="docutils literal">cnt_ordrs</code></p></li>
+<li><p><code class="docutils literal">customer_billing_address</code> is better than <code class="docutils literal">cust_bill_addr</code></p></li>
+</ul>
+</blockquote>
+</section><section id="uniform-suffixes"><h2>12. Uniform suffixes</h2>
+<dl class="simple">
+<dt>Picked some of these up from <a class="reference external" href="www.sqlstyle.guide">www.sqlstyle.guide</a>, while others are work conventions:</dt>
+<dd><ul class="simple">
+<li><p><code class="docutils literal">_id</code> - for unique identifiers such as a primary or foreign key</p></li>
+<li><p><code class="docutils literal">_total</code> - for <code class="docutils literal">sum()</code> fields</p></li>
+<li><p><code class="docutils literal">_ds</code> - for date fields</p></li>
+<li><p><code class="docutils literal">_ts</code> - for timestamp fields</p></li>
+</ul></dd>
+</dl></section><section id="write-boolean-flag-fields-as-questions"><h2>13. Write boolean flag fields as questions</h2>
+<p>I like this one because it makes for more readable queries later. If you start a boolean field with <code class="docutils literal">is_</code> or <code class="docutils literal">has_</code>, then using it to filter (a common pattern) results in a very human-readable code snippet. For example:</p>
+<pre class="literal-block">select order_id
+from orders
+where is_first_order = true</pre>
+</section><section id="between-and-while-in-multiple-or-clauses"><h2>14. <code class="docutils literal">between</code> &gt; <code class="docutils literal">and</code> while <code class="docutils literal">in</code> &gt; multiple <code class="docutils literal">or</code> clauses</h2>
+<p>An example to illustrate the point:</p>
+<pre class="literal-block">select name
+from people
+where
+    age &gt;= 20
+    and age &lt; 30
+    and (height = 72
+        or height = 74
+        or height = 76)</pre>
+<p>vs</p>
+<pre class="literal-block">select name
+from people
+where
+    age between 20 and 30
+    and height in (72, 74, 76)</pre>
+</section>
+</div>
+    
+</article></main><footer id="footer"><p>© 2017-2023   |   <a href="mailto:michael.deckebach@gmail.com">michael.deckebach@gmail.com</a></p>
+            
+        </footer>
+</div>
+                <script src="../../assets/js/all-nocdn.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
+    </script>
+</body>
+</html>

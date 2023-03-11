@@ -15,7 +15,7 @@
  </url>
  <url>
   <loc>https://michaeldeckebach.com/categories/</loc>
-  <lastmod>2022-05-29T00:04:00Z</lastmod>
+  <lastmod>2022-08-14T23:35:00Z</lastmod>
  </url>
  <url>
   <loc>https://michaeldeckebach.com/categories/data/</loc>
@@ -70,6 +70,14 @@
   <lastmod>2022-05-28T21:21:00Z</lastmod>
  </url>
  <url>
+  <loc>https://michaeldeckebach.com/categories/sql/</loc>
+  <lastmod>2022-08-12T18:31:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://michaeldeckebach.com/categories/tableau/</loc>
+  <lastmod>2022-08-14T02:45:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://michaeldeckebach.com/categories/te-araroa/</loc>
   <lastmod>2022-05-28T21:21:00Z</lastmod>
  </url>
@@ -82,8 +90,16 @@
   <lastmod>2022-05-28T21:21:00Z</lastmod>
  </url>
  <url>
+  <loc>https://michaeldeckebach.com/categories/vizualization/</loc>
+  <lastmod>2022-08-14T23:35:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://michaeldeckebach.com/categories/wind-river-high-route/</loc>
+  <lastmod>2022-08-14T01:19:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://michaeldeckebach.com/writing/</loc>
-  <lastmod>2022-05-29T00:04:00Z</lastmod>
+  <lastmod>2023-03-11T00:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://michaeldeckebach.com/writing/a-life-update/</loc>
@@ -166,8 +182,16 @@
   <lastmod>2022-05-28T21:21:00Z</lastmod>
  </url>
  <url>
+  <loc>https://michaeldeckebach.com/writing/lessons-learned-from-making-call-center-calculator/</loc>
+  <lastmod>2022-08-12T18:31:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://michaeldeckebach.com/writing/lionels-shr-video/</loc>
   <lastmod>2022-05-28T21:21:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://michaeldeckebach.com/writing/my-sql-formatting-guide/</loc>
+  <lastmod>2022-08-12T18:31:00Z</lastmod>
  </url>
  <url>
   <loc>https://michaeldeckebach.com/writing/new-zealand-hiking-dictionary/</loc>
@@ -184,6 +208,10 @@
  <url>
   <loc>https://michaeldeckebach.com/writing/on-scope/</loc>
   <lastmod>2022-05-28T22:05:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://michaeldeckebach.com/writing/pauls-tableau-dashboard/</loc>
+  <lastmod>2022-08-14T02:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://michaeldeckebach.com/writing/peru-a-video/</loc>
@@ -234,6 +262,10 @@
   <lastmod>2022-05-28T21:21:00Z</lastmod>
  </url>
  <url>
+  <loc>https://michaeldeckebach.com/writing/trip%20report-wind-river-high-route/</loc>
+  <lastmod>2022-08-14T01:18:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://michaeldeckebach.com/writing/trip-report-choquequirao-to-machu-picchu/</loc>
   <lastmod>2022-05-28T21:21:00Z</lastmod>
  </url>
@@ -242,7 +274,19 @@
   <lastmod>2022-05-28T21:21:00Z</lastmod>
  </url>
  <url>
+  <loc>https://michaeldeckebach.com/writing/trip-report-kings-canyon-high-basin-route/</loc>
+  <lastmod>2022-08-14T01:19:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://michaeldeckebach.com/writing/trip-report-wind-river-high-route/</loc>
+  <lastmod>2023-03-11T00:00:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://michaeldeckebach.com/writing/what-i-learned-from-te-araroa/</loc>
   <lastmod>2022-05-28T21:21:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://michaeldeckebach.com/writing/wind-river-high-route-trip-report/</loc>
+  <lastmod>2022-08-14T01:17:00Z</lastmod>
  </url>
 </urlset>
