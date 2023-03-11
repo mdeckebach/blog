@@ -1,5 +1,5 @@
-.. title: Kings Canyon High Basin Route Trip Report
-.. slug: kings-canyon-high-basin-route-trip-report
+.. title: Trip Report: Kings Canyon High Basin Route
+.. slug: trip-report-kings-canyon-high-basin-route
 .. date: 2018-11-01 21:08:14 UTC-07:00
 .. tags: Hiking, Trip Reports, Kings Canyon High Basin Route
 .. category: 
