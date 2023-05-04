@@ -64,12 +64,38 @@ It was a fun project t">
 <p>That's not to say that everything was roses and sunshine. Below are the three biggest hurdles I encountered working on this project, and what I learned as a result.</p>
 <section id="event-class-overwriting"><h2>1. Event Class Overwriting</h2>
 <p>When I first started tinkering with the idea of simulating a call center queue, I had no idea what I was doing. I created a naive loop like this, where each iteration represented one second in the time period:</p>
-<pre class="literal-block">for second in total_seconds:
-    if second in contact_start_times:
-        make new contact + do stuff
-    for contact in active_contacts:
-        if contact.end_time = second
-            do stuff</pre>
+<div class="code"><table class="codetable">
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_ec0e6299c9ef479cbcf388da7c8c31e6-1"><code data-line-number="1"></code></a></td>
+<td class="code"><code><a id="rest_code_ec0e6299c9ef479cbcf388da7c8c31e6-1" name="rest_code_ec0e6299c9ef479cbcf388da7c8c31e6-1"></a><span class="k">for</span><span class="w"> </span><span class="nx">second</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">total_seconds</span><span class="o">:</span><span class="w"></span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_ec0e6299c9ef479cbcf388da7c8c31e6-2"><code data-line-number="2"></code></a></td>
+<td class="code"><code><a id="rest_code_ec0e6299c9ef479cbcf388da7c8c31e6-2" name="rest_code_ec0e6299c9ef479cbcf388da7c8c31e6-2"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">second</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">contact_start_times</span><span class="o">:</span><span class="w"></span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_ec0e6299c9ef479cbcf388da7c8c31e6-3"><code data-line-number="3"></code></a></td>
+<td class="code"><code><a id="rest_code_ec0e6299c9ef479cbcf388da7c8c31e6-3" name="rest_code_ec0e6299c9ef479cbcf388da7c8c31e6-3"></a><span class="w">        </span><span class="nx">make</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">contact</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="nx">stuff</span><span class="w"></span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_ec0e6299c9ef479cbcf388da7c8c31e6-4"><code data-line-number="4"></code></a></td>
+<td class="code"><code><a id="rest_code_ec0e6299c9ef479cbcf388da7c8c31e6-4" name="rest_code_ec0e6299c9ef479cbcf388da7c8c31e6-4"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="nx">contact</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">active_contacts</span><span class="o">:</span><span class="w"></span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_ec0e6299c9ef479cbcf388da7c8c31e6-5"><code data-line-number="5"></code></a></td>
+<td class="code"><code><a id="rest_code_ec0e6299c9ef479cbcf388da7c8c31e6-5" name="rest_code_ec0e6299c9ef479cbcf388da7c8c31e6-5"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nx">contact</span><span class="p">.</span><span class="nx">end_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">second</span><span class="w"></span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_ec0e6299c9ef479cbcf388da7c8c31e6-6"><code data-line-number="6"></code></a></td>
+<td class="code"><code><a id="rest_code_ec0e6299c9ef479cbcf388da7c8c31e6-6" name="rest_code_ec0e6299c9ef479cbcf388da7c8c31e6-6"></a><span class="w">            </span><span class="k">do</span><span class="w"> </span><span class="nx">stuff</span><span class="w"></span>
+</code></td>
+</tr>
+</table></div>
 <p>While it worked, it wasn't efficient at all. Given 100 simulations per agent count, ~8 agent counts to test, 50 contacts, and a period of 30 minutes (1800 seconds), that means 100 x 8 x 50 x 1800 = <strong>72 million iterations!</strong></p>
 <p>Fortunately, there is a better way. When covering queues (and priority queues) in my Data Structures course this past spring, we touched on the idea of an event-driven simulation. <strong>Epiphany: I didn't need to care about every second in a simulation, only those seconds where a call arrived or ended!</strong></p>
 <p>The effect is that instead of 72 million iterations, I only needed 80 thousand (100 x 8 x 50 x 2). Much more manageable!</p>
@@ -85,83 +111,350 @@ It was a fun project t">
 <p>To provide a bit of feedback to the user, I thought to add a progress bar to the web app. However, how do I "update" it if JavaScript is single threaded?</p>
 <p><strong>The answer is Web Workers.</strong> A Web Worker is an object that runs a JavaScript file in a background thread. This way, the thread can continue doing all calculations without affecting the user interface. Futhermore, the Web Worker can pass messages to and from the code in which it is created, which seemed like a perfect way to bring my progress bar idea to life.</p>
 <p>I'm no expert, but here's what I ended up with:</p>
-<pre class="literal-block">/**
-* On Submit Functions - runs whenever form is submitted
-*/
-
-// Initialize worker and listener for form submission
-var worker = null;
-if (window.Worker) {
-    worker = new Worker("/js/worker.js");
-    document.getElementById('input_form').addEventListener('submit', startWorker);
-} else {
-    alert("Workers are not supported. Please use a different browser.");
-}
-
-// Start worker
-function startWorker() {
-    worker.postMessage(getInputs());
-}
-
-// Read form inputs into dictionary to pass to worker
-function getInputs() {
-    let dict = {
-        &lt;get values from webform&gt;
-    };
-    return dict;
-}</pre>
-<div class="line-block">
-<div class="line"><br></div>
-<div class="line">This is from my main JavaScript file, which contains all eventListeners. Any time the form is submitted, it creates a Web Worker and passes it a dictionary containing all the form's input values.</div>
-</div>
+<div class="code"><table class="codetable">
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_446d567c44354696a470d607a8c26069-1"><code data-line-number=" 1"></code></a></td>
+<td class="code"><code><a id="rest_code_446d567c44354696a470d607a8c26069-1" name="rest_code_446d567c44354696a470d607a8c26069-1"></a><span class="c1">// On Submit Functions - runs whenever form is submitted</span><span class="w"></span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_446d567c44354696a470d607a8c26069-2"><code data-line-number=" 2"></code></a></td>
+<td class="code"><code><a id="rest_code_446d567c44354696a470d607a8c26069-2" name="rest_code_446d567c44354696a470d607a8c26069-2"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_446d567c44354696a470d607a8c26069-3"><code data-line-number=" 3"></code></a></td>
+<td class="code"><code><a id="rest_code_446d567c44354696a470d607a8c26069-3" name="rest_code_446d567c44354696a470d607a8c26069-3"></a><span class="c1">// Initialize worker and listener for form submission</span><span class="w"></span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_446d567c44354696a470d607a8c26069-4"><code data-line-number=" 4"></code></a></td>
+<td class="code"><code><a id="rest_code_446d567c44354696a470d607a8c26069-4" name="rest_code_446d567c44354696a470d607a8c26069-4"></a><span class="kd">var</span><span class="w"> </span><span class="nx">worker</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span><span class="w"></span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_446d567c44354696a470d607a8c26069-5"><code data-line-number=" 5"></code></a></td>
+<td class="code"><code><a id="rest_code_446d567c44354696a470d607a8c26069-5" name="rest_code_446d567c44354696a470d607a8c26069-5"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">Worker</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_446d567c44354696a470d607a8c26069-6"><code data-line-number=" 6"></code></a></td>
+<td class="code"><code><a id="rest_code_446d567c44354696a470d607a8c26069-6" name="rest_code_446d567c44354696a470d607a8c26069-6"></a><span class="w">    </span><span class="nx">worker</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Worker</span><span class="p">(</span><span class="s2">"/js/worker.js"</span><span class="p">);</span><span class="w"></span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_446d567c44354696a470d607a8c26069-7"><code data-line-number=" 7"></code></a></td>
+<td class="code"><code><a id="rest_code_446d567c44354696a470d607a8c26069-7" name="rest_code_446d567c44354696a470d607a8c26069-7"></a><span class="w">    </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'input_form'</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'submit'</span><span class="p">,</span><span class="w"> </span><span class="nx">startWorker</span><span class="p">);</span><span class="w"></span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_446d567c44354696a470d607a8c26069-8"><code data-line-number=" 8"></code></a></td>
+<td class="code"><code><a id="rest_code_446d567c44354696a470d607a8c26069-8" name="rest_code_446d567c44354696a470d607a8c26069-8"></a><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_446d567c44354696a470d607a8c26069-9"><code data-line-number=" 9"></code></a></td>
+<td class="code"><code><a id="rest_code_446d567c44354696a470d607a8c26069-9" name="rest_code_446d567c44354696a470d607a8c26069-9"></a><span class="w">    </span><span class="nx">alert</span><span class="p">(</span><span class="s2">"Workers are not supported. Please use a different browser."</span><span class="p">);</span><span class="w"></span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_446d567c44354696a470d607a8c26069-10"><code data-line-number="10"></code></a></td>
+<td class="code"><code><a id="rest_code_446d567c44354696a470d607a8c26069-10" name="rest_code_446d567c44354696a470d607a8c26069-10"></a><span class="p">}</span><span class="w"></span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_446d567c44354696a470d607a8c26069-11"><code data-line-number="11"></code></a></td>
+<td class="code"><code><a id="rest_code_446d567c44354696a470d607a8c26069-11" name="rest_code_446d567c44354696a470d607a8c26069-11"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_446d567c44354696a470d607a8c26069-12"><code data-line-number="12"></code></a></td>
+<td class="code"><code><a id="rest_code_446d567c44354696a470d607a8c26069-12" name="rest_code_446d567c44354696a470d607a8c26069-12"></a><span class="c1">// Start worker</span><span class="w"></span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_446d567c44354696a470d607a8c26069-13"><code data-line-number="13"></code></a></td>
+<td class="code"><code><a id="rest_code_446d567c44354696a470d607a8c26069-13" name="rest_code_446d567c44354696a470d607a8c26069-13"></a><span class="kd">function</span><span class="w"> </span><span class="nx">startWorker</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_446d567c44354696a470d607a8c26069-14"><code data-line-number="14"></code></a></td>
+<td class="code"><code><a id="rest_code_446d567c44354696a470d607a8c26069-14" name="rest_code_446d567c44354696a470d607a8c26069-14"></a><span class="w">    </span><span class="nx">worker</span><span class="p">.</span><span class="nx">postMessage</span><span class="p">(</span><span class="nx">getInputs</span><span class="p">());</span><span class="w"></span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_446d567c44354696a470d607a8c26069-15"><code data-line-number="15"></code></a></td>
+<td class="code"><code><a id="rest_code_446d567c44354696a470d607a8c26069-15" name="rest_code_446d567c44354696a470d607a8c26069-15"></a><span class="p">}</span><span class="w"></span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_446d567c44354696a470d607a8c26069-16"><code data-line-number="16"></code></a></td>
+<td class="code"><code><a id="rest_code_446d567c44354696a470d607a8c26069-16" name="rest_code_446d567c44354696a470d607a8c26069-16"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_446d567c44354696a470d607a8c26069-17"><code data-line-number="17"></code></a></td>
+<td class="code"><code><a id="rest_code_446d567c44354696a470d607a8c26069-17" name="rest_code_446d567c44354696a470d607a8c26069-17"></a><span class="c1">// Read form inputs into dictionary to pass to worker</span><span class="w"></span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_446d567c44354696a470d607a8c26069-18"><code data-line-number="18"></code></a></td>
+<td class="code"><code><a id="rest_code_446d567c44354696a470d607a8c26069-18" name="rest_code_446d567c44354696a470d607a8c26069-18"></a><span class="kd">function</span><span class="w"> </span><span class="nx">getInputs</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_446d567c44354696a470d607a8c26069-19"><code data-line-number="19"></code></a></td>
+<td class="code"><code><a id="rest_code_446d567c44354696a470d607a8c26069-19" name="rest_code_446d567c44354696a470d607a8c26069-19"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">dict</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_446d567c44354696a470d607a8c26069-20"><code data-line-number="20"></code></a></td>
+<td class="code"><code><a id="rest_code_446d567c44354696a470d607a8c26069-20" name="rest_code_446d567c44354696a470d607a8c26069-20"></a><span class="w">        </span><span class="o">&lt;</span><span class="nx">get</span><span class="w"> </span><span class="nx">values</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="nx">webform</span><span class="o">&gt;</span><span class="w"></span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_446d567c44354696a470d607a8c26069-21"><code data-line-number="21"></code></a></td>
+<td class="code"><code><a id="rest_code_446d567c44354696a470d607a8c26069-21" name="rest_code_446d567c44354696a470d607a8c26069-21"></a><span class="w">    </span><span class="p">};</span><span class="w"></span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_446d567c44354696a470d607a8c26069-22"><code data-line-number="22"></code></a></td>
+<td class="code"><code><a id="rest_code_446d567c44354696a470d607a8c26069-22" name="rest_code_446d567c44354696a470d607a8c26069-22"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">dict</span><span class="p">;</span><span class="w"></span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_446d567c44354696a470d607a8c26069-23"><code data-line-number="23"></code></a></td>
+<td class="code"><code><a id="rest_code_446d567c44354696a470d607a8c26069-23" name="rest_code_446d567c44354696a470d607a8c26069-23"></a><span class="p">}</span><span class="w"></span>
+</code></td>
+</tr>
+</table></div>
+<p>This is from my main JavaScript file, which contains all eventListeners. Any time the form is submitted, it creates a Web Worker and passes it a dictionary containing all the form's input values.</p>
 <p>The Worker itself is set up to receive this dict, then it triggers the underlying Erlang C and Simulation code in the calc() function. Periodically, throughout the calc() function it passes back a message containing its overall progress. The Simulation portion has much greater time complexity than Erlang C, so for simplicity sake I calculate progress as the % of the simulation.</p>
-<pre class="literal-block">self.addEventListener("message", onMessageReceive);
-
-function onMessageReceive(e) {
-    let dict = e.data;
-    calc(dict);
-}
-
-function calc(dict) {
-
-    &lt;calculate Erlang C&gt;
-
-   &lt;calculate simulation&gt; {
-        // Update progress bar as you go
-        var cur_progress = (Number(index) + 1) / x.length * 100;
-        postMessage({type: "progress", value: cur_progress});
-    }
-
-    // Bundle everything up to pass back to main
-    let results = {
-        &lt;dict containing Erlang C and simulation results&gt;
-    }
-    postMessage({type: "complete", value: results});
-}</pre>
+<div class="code"><table class="codetable">
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_a01564c1069a4e3e9bdd37af058def1a-1"><code data-line-number=" 1"></code></a></td>
+<td class="code"><code><a id="rest_code_a01564c1069a4e3e9bdd37af058def1a-1" name="rest_code_a01564c1069a4e3e9bdd37af058def1a-1"></a><span class="nx">self</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"message"</span><span class="p">,</span><span class="w"> </span><span class="nx">onMessageReceive</span><span class="p">);</span><span class="w"></span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_a01564c1069a4e3e9bdd37af058def1a-2"><code data-line-number=" 2"></code></a></td>
+<td class="code"><code><a id="rest_code_a01564c1069a4e3e9bdd37af058def1a-2" name="rest_code_a01564c1069a4e3e9bdd37af058def1a-2"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_a01564c1069a4e3e9bdd37af058def1a-3"><code data-line-number=" 3"></code></a></td>
+<td class="code"><code><a id="rest_code_a01564c1069a4e3e9bdd37af058def1a-3" name="rest_code_a01564c1069a4e3e9bdd37af058def1a-3"></a><span class="kd">function</span><span class="w"> </span><span class="nx">onMessageReceive</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_a01564c1069a4e3e9bdd37af058def1a-4"><code data-line-number=" 4"></code></a></td>
+<td class="code"><code><a id="rest_code_a01564c1069a4e3e9bdd37af058def1a-4" name="rest_code_a01564c1069a4e3e9bdd37af058def1a-4"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">dict</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">e</span><span class="p">.</span><span class="nx">data</span><span class="p">;</span><span class="w"></span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_a01564c1069a4e3e9bdd37af058def1a-5"><code data-line-number=" 5"></code></a></td>
+<td class="code"><code><a id="rest_code_a01564c1069a4e3e9bdd37af058def1a-5" name="rest_code_a01564c1069a4e3e9bdd37af058def1a-5"></a><span class="w">    </span><span class="nx">calc</span><span class="p">(</span><span class="nx">dict</span><span class="p">);</span><span class="w"></span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_a01564c1069a4e3e9bdd37af058def1a-6"><code data-line-number=" 6"></code></a></td>
+<td class="code"><code><a id="rest_code_a01564c1069a4e3e9bdd37af058def1a-6" name="rest_code_a01564c1069a4e3e9bdd37af058def1a-6"></a><span class="p">}</span><span class="w"></span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_a01564c1069a4e3e9bdd37af058def1a-7"><code data-line-number=" 7"></code></a></td>
+<td class="code"><code><a id="rest_code_a01564c1069a4e3e9bdd37af058def1a-7" name="rest_code_a01564c1069a4e3e9bdd37af058def1a-7"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_a01564c1069a4e3e9bdd37af058def1a-8"><code data-line-number=" 8"></code></a></td>
+<td class="code"><code><a id="rest_code_a01564c1069a4e3e9bdd37af058def1a-8" name="rest_code_a01564c1069a4e3e9bdd37af058def1a-8"></a><span class="kd">function</span><span class="w"> </span><span class="nx">calc</span><span class="p">(</span><span class="nx">dict</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_a01564c1069a4e3e9bdd37af058def1a-9"><code data-line-number=" 9"></code></a></td>
+<td class="code"><code><a id="rest_code_a01564c1069a4e3e9bdd37af058def1a-9" name="rest_code_a01564c1069a4e3e9bdd37af058def1a-9"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_a01564c1069a4e3e9bdd37af058def1a-10"><code data-line-number="10"></code></a></td>
+<td class="code"><code><a id="rest_code_a01564c1069a4e3e9bdd37af058def1a-10" name="rest_code_a01564c1069a4e3e9bdd37af058def1a-10"></a><span class="w">    </span><span class="o">&lt;</span><span class="nx">calculate</span><span class="w"> </span><span class="nx">Erlang</span><span class="w"> </span><span class="nx">C</span><span class="o">&gt;</span><span class="w"></span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_a01564c1069a4e3e9bdd37af058def1a-11"><code data-line-number="11"></code></a></td>
+<td class="code"><code><a id="rest_code_a01564c1069a4e3e9bdd37af058def1a-11" name="rest_code_a01564c1069a4e3e9bdd37af058def1a-11"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_a01564c1069a4e3e9bdd37af058def1a-12"><code data-line-number="12"></code></a></td>
+<td class="code"><code><a id="rest_code_a01564c1069a4e3e9bdd37af058def1a-12" name="rest_code_a01564c1069a4e3e9bdd37af058def1a-12"></a><span class="w">   </span><span class="o">&lt;</span><span class="nx">calculate</span><span class="w"> </span><span class="nx">simulation</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_a01564c1069a4e3e9bdd37af058def1a-13"><code data-line-number="13"></code></a></td>
+<td class="code"><code><a id="rest_code_a01564c1069a4e3e9bdd37af058def1a-13" name="rest_code_a01564c1069a4e3e9bdd37af058def1a-13"></a><span class="w">        </span><span class="c1">// Update progress bar as you go</span><span class="w"></span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_a01564c1069a4e3e9bdd37af058def1a-14"><code data-line-number="14"></code></a></td>
+<td class="code"><code><a id="rest_code_a01564c1069a4e3e9bdd37af058def1a-14" name="rest_code_a01564c1069a4e3e9bdd37af058def1a-14"></a><span class="w">        </span><span class="kd">var</span><span class="w"> </span><span class="nx">cur_progress</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nb">Number</span><span class="p">(</span><span class="nx">index</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nx">x</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">100</span><span class="p">;</span><span class="w"></span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_a01564c1069a4e3e9bdd37af058def1a-15"><code data-line-number="15"></code></a></td>
+<td class="code"><code><a id="rest_code_a01564c1069a4e3e9bdd37af058def1a-15" name="rest_code_a01564c1069a4e3e9bdd37af058def1a-15"></a><span class="w">        </span><span class="nx">postMessage</span><span class="p">({</span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s2">"progress"</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="nx">cur_progress</span><span class="p">});</span><span class="w"></span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_a01564c1069a4e3e9bdd37af058def1a-16"><code data-line-number="16"></code></a></td>
+<td class="code"><code><a id="rest_code_a01564c1069a4e3e9bdd37af058def1a-16" name="rest_code_a01564c1069a4e3e9bdd37af058def1a-16"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_a01564c1069a4e3e9bdd37af058def1a-17"><code data-line-number="17"></code></a></td>
+<td class="code"><code><a id="rest_code_a01564c1069a4e3e9bdd37af058def1a-17" name="rest_code_a01564c1069a4e3e9bdd37af058def1a-17"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_a01564c1069a4e3e9bdd37af058def1a-18"><code data-line-number="18"></code></a></td>
+<td class="code"><code><a id="rest_code_a01564c1069a4e3e9bdd37af058def1a-18" name="rest_code_a01564c1069a4e3e9bdd37af058def1a-18"></a><span class="w">    </span><span class="c1">// Bundle everything up to pass back to main</span><span class="w"></span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_a01564c1069a4e3e9bdd37af058def1a-19"><code data-line-number="19"></code></a></td>
+<td class="code"><code><a id="rest_code_a01564c1069a4e3e9bdd37af058def1a-19" name="rest_code_a01564c1069a4e3e9bdd37af058def1a-19"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">results</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_a01564c1069a4e3e9bdd37af058def1a-20"><code data-line-number="20"></code></a></td>
+<td class="code"><code><a id="rest_code_a01564c1069a4e3e9bdd37af058def1a-20" name="rest_code_a01564c1069a4e3e9bdd37af058def1a-20"></a><span class="w">        </span><span class="o">&lt;</span><span class="nx">dict</span><span class="w"> </span><span class="nx">containing</span><span class="w"> </span><span class="nx">Erlang</span><span class="w"> </span><span class="nx">C</span><span class="w"> </span><span class="nx">and</span><span class="w"> </span><span class="nx">simulation</span><span class="w"> </span><span class="nx">results</span><span class="o">&gt;</span><span class="w"></span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_a01564c1069a4e3e9bdd37af058def1a-21"><code data-line-number="21"></code></a></td>
+<td class="code"><code><a id="rest_code_a01564c1069a4e3e9bdd37af058def1a-21" name="rest_code_a01564c1069a4e3e9bdd37af058def1a-21"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_a01564c1069a4e3e9bdd37af058def1a-22"><code data-line-number="22"></code></a></td>
+<td class="code"><code><a id="rest_code_a01564c1069a4e3e9bdd37af058def1a-22" name="rest_code_a01564c1069a4e3e9bdd37af058def1a-22"></a><span class="w">    </span><span class="nx">postMessage</span><span class="p">({</span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s2">"complete"</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="nx">results</span><span class="p">});</span><span class="w"></span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_a01564c1069a4e3e9bdd37af058def1a-23"><code data-line-number="23"></code></a></td>
+<td class="code"><code><a id="rest_code_a01564c1069a4e3e9bdd37af058def1a-23" name="rest_code_a01564c1069a4e3e9bdd37af058def1a-23"></a><span class="p">}</span><span class="w"></span>
+</code></td>
+</tr>
+</table></div>
 <p>Finally, the main.js file has a simple switch function to take these progress updates and update the progress bar accordingly:</p>
-<pre class="literal-block">/**
-* On Message Receipt Functions - runs whenever worker sends progress update or completes
-*/
-
-// Listener for when worker sends a message back
-worker.addEventListener("message", onMessageReceive);
-
-function onMessageReceive(e) {
-    switch (e.data.type) {
-        case "start":
-            break;
-        case "progress":
-            updateProgress(e.data.value);
-            break;
-        case "complete":
-            updateProgress(100);
-            updateChart('chart', e.data.value);
-            break;
-        case "debug":
-            console.log(e.data);
-            break;
-    }
-}</pre>
+<div class="code"><table class="codetable">
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_7eef09afe47b4e4caaaa562c00fc7724-1"><code data-line-number=" 1"></code></a></td>
+<td class="code"><code><a id="rest_code_7eef09afe47b4e4caaaa562c00fc7724-1" name="rest_code_7eef09afe47b4e4caaaa562c00fc7724-1"></a><span class="c1">// On Message Receipt Functions - runs whenever worker sends progress update or completes</span><span class="w"></span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_7eef09afe47b4e4caaaa562c00fc7724-2"><code data-line-number=" 2"></code></a></td>
+<td class="code"><code><a id="rest_code_7eef09afe47b4e4caaaa562c00fc7724-2" name="rest_code_7eef09afe47b4e4caaaa562c00fc7724-2"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_7eef09afe47b4e4caaaa562c00fc7724-3"><code data-line-number=" 3"></code></a></td>
+<td class="code"><code><a id="rest_code_7eef09afe47b4e4caaaa562c00fc7724-3" name="rest_code_7eef09afe47b4e4caaaa562c00fc7724-3"></a><span class="c1">// Listener for when worker sends a message back</span><span class="w"></span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_7eef09afe47b4e4caaaa562c00fc7724-4"><code data-line-number=" 4"></code></a></td>
+<td class="code"><code><a id="rest_code_7eef09afe47b4e4caaaa562c00fc7724-4" name="rest_code_7eef09afe47b4e4caaaa562c00fc7724-4"></a><span class="nx">worker</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"message"</span><span class="p">,</span><span class="w"> </span><span class="nx">onMessageReceive</span><span class="p">);</span><span class="w"></span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_7eef09afe47b4e4caaaa562c00fc7724-5"><code data-line-number=" 5"></code></a></td>
+<td class="code"><code><a id="rest_code_7eef09afe47b4e4caaaa562c00fc7724-5" name="rest_code_7eef09afe47b4e4caaaa562c00fc7724-5"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_7eef09afe47b4e4caaaa562c00fc7724-6"><code data-line-number=" 6"></code></a></td>
+<td class="code"><code><a id="rest_code_7eef09afe47b4e4caaaa562c00fc7724-6" name="rest_code_7eef09afe47b4e4caaaa562c00fc7724-6"></a><span class="kd">function</span><span class="w"> </span><span class="nx">onMessageReceive</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_7eef09afe47b4e4caaaa562c00fc7724-7"><code data-line-number=" 7"></code></a></td>
+<td class="code"><code><a id="rest_code_7eef09afe47b4e4caaaa562c00fc7724-7" name="rest_code_7eef09afe47b4e4caaaa562c00fc7724-7"></a><span class="w">    </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_7eef09afe47b4e4caaaa562c00fc7724-8"><code data-line-number=" 8"></code></a></td>
+<td class="code"><code><a id="rest_code_7eef09afe47b4e4caaaa562c00fc7724-8" name="rest_code_7eef09afe47b4e4caaaa562c00fc7724-8"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="s2">"start"</span><span class="o">:</span><span class="w"></span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_7eef09afe47b4e4caaaa562c00fc7724-9"><code data-line-number=" 9"></code></a></td>
+<td class="code"><code><a id="rest_code_7eef09afe47b4e4caaaa562c00fc7724-9" name="rest_code_7eef09afe47b4e4caaaa562c00fc7724-9"></a><span class="w">            </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_7eef09afe47b4e4caaaa562c00fc7724-10"><code data-line-number="10"></code></a></td>
+<td class="code"><code><a id="rest_code_7eef09afe47b4e4caaaa562c00fc7724-10" name="rest_code_7eef09afe47b4e4caaaa562c00fc7724-10"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="s2">"progress"</span><span class="o">:</span><span class="w"></span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_7eef09afe47b4e4caaaa562c00fc7724-11"><code data-line-number="11"></code></a></td>
+<td class="code"><code><a id="rest_code_7eef09afe47b4e4caaaa562c00fc7724-11" name="rest_code_7eef09afe47b4e4caaaa562c00fc7724-11"></a><span class="w">            </span><span class="nx">updateProgress</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span><span class="w"></span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_7eef09afe47b4e4caaaa562c00fc7724-12"><code data-line-number="12"></code></a></td>
+<td class="code"><code><a id="rest_code_7eef09afe47b4e4caaaa562c00fc7724-12" name="rest_code_7eef09afe47b4e4caaaa562c00fc7724-12"></a><span class="w">            </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_7eef09afe47b4e4caaaa562c00fc7724-13"><code data-line-number="13"></code></a></td>
+<td class="code"><code><a id="rest_code_7eef09afe47b4e4caaaa562c00fc7724-13" name="rest_code_7eef09afe47b4e4caaaa562c00fc7724-13"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="s2">"complete"</span><span class="o">:</span><span class="w"></span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_7eef09afe47b4e4caaaa562c00fc7724-14"><code data-line-number="14"></code></a></td>
+<td class="code"><code><a id="rest_code_7eef09afe47b4e4caaaa562c00fc7724-14" name="rest_code_7eef09afe47b4e4caaaa562c00fc7724-14"></a><span class="w">            </span><span class="nx">updateProgress</span><span class="p">(</span><span class="mf">100</span><span class="p">);</span><span class="w"></span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_7eef09afe47b4e4caaaa562c00fc7724-15"><code data-line-number="15"></code></a></td>
+<td class="code"><code><a id="rest_code_7eef09afe47b4e4caaaa562c00fc7724-15" name="rest_code_7eef09afe47b4e4caaaa562c00fc7724-15"></a><span class="w">            </span><span class="nx">updateChart</span><span class="p">(</span><span class="s1">'chart'</span><span class="p">,</span><span class="w"> </span><span class="nx">e</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span><span class="w"></span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_7eef09afe47b4e4caaaa562c00fc7724-16"><code data-line-number="16"></code></a></td>
+<td class="code"><code><a id="rest_code_7eef09afe47b4e4caaaa562c00fc7724-16" name="rest_code_7eef09afe47b4e4caaaa562c00fc7724-16"></a><span class="w">            </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_7eef09afe47b4e4caaaa562c00fc7724-17"><code data-line-number="17"></code></a></td>
+<td class="code"><code><a id="rest_code_7eef09afe47b4e4caaaa562c00fc7724-17" name="rest_code_7eef09afe47b4e4caaaa562c00fc7724-17"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="s2">"debug"</span><span class="o">:</span><span class="w"></span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_7eef09afe47b4e4caaaa562c00fc7724-18"><code data-line-number="18"></code></a></td>
+<td class="code"><code><a id="rest_code_7eef09afe47b4e4caaaa562c00fc7724-18" name="rest_code_7eef09afe47b4e4caaaa562c00fc7724-18"></a><span class="w">            </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span><span class="w"></span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_7eef09afe47b4e4caaaa562c00fc7724-19"><code data-line-number="19"></code></a></td>
+<td class="code"><code><a id="rest_code_7eef09afe47b4e4caaaa562c00fc7724-19" name="rest_code_7eef09afe47b4e4caaaa562c00fc7724-19"></a><span class="w">            </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_7eef09afe47b4e4caaaa562c00fc7724-20"><code data-line-number="20"></code></a></td>
+<td class="code"><code><a id="rest_code_7eef09afe47b4e4caaaa562c00fc7724-20" name="rest_code_7eef09afe47b4e4caaaa562c00fc7724-20"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#rest_code_7eef09afe47b4e4caaaa562c00fc7724-21"><code data-line-number="21"></code></a></td>
+<td class="code"><code><a id="rest_code_7eef09afe47b4e4caaaa562c00fc7724-21" name="rest_code_7eef09afe47b4e4caaaa562c00fc7724-21"></a><span class="p">}</span><span class="w"></span>
+</code></td>
+</tr>
+</table></div>
 <p><a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers">Read more about Web Workers here</a>. Pretty cool stuff!</p>
 </section><section id="js-import-importscript"><h2>3. JS import &amp; importScript</h2>
 <p>Full disclosure:  originally I wrote all my JavaScript as one big file. I knew it was messy and figured I'd go back and clean things up later. Turns out, refactoring JavaScript is different than other languages like Python (where I was familiar with the idea of <code class="docutils literal">import package as pkg</code> commands).</p>

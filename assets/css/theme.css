@@ -410,7 +410,8 @@ img {
 	clip: auto;
 }
 
-pre.code, code {
+ pre.code, code {
+	font: monospace;
 	white-space: pre-wrap;
 	word-wrap: normal;
 	overflow: auto;
@@ -484,6 +485,39 @@ header {
 .youtube-video > iframe {
     max-width: 100%;
 }
+
+/* code formatting (inline & block) */
+
+p > code,
+li > code,
+dd > code,
+td > code,
+h1 > code,
+h2 > code,
+h3 > code {
+	background: #eee;
+	word-wrap: break-word;
+	box-decoration-break: clone;
+	padding: .1rem .3rem .1rem;
+	border-radius: .2rem;
+} 
+
+.codetable {
+	border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.codetable td.linenos {
+	width: 1em;
+}
+
+.code .codetable .c1 {
+	color: #6b855b;
+}
+
+.code .codetable .linenos a {
+	text-decoration: none;
+}
+
 
 /* SOURCE: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
 @media print {
