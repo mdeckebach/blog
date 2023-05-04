@@ -14,18 +14,22 @@ My current opinions on SQL formatting. Will update as preferences change.
 
 1. Lowercase keywords
 ======================
-| IntelliSense on modern IDEs makes capitalization obsolete.
-|
-|   ``select pk from orders`` = good
-|   ``SELECT pk FROM orders`` = bad/unnecessary 
-|   ``sElEcT pk fRoM orders`` = insane
+IntelliSense on modern IDEs makes capitalization obsolete.
+
+.. code-block:: SQL
+    :linenos:
+
+    select pk from orders --good
+    SELECT pk FROM orders --bad/unnecessary 
+    sElEcT pk fRoM orders --insane
 
 2. Indentation
 ==============
 
 Clauses should always be at the same level of indentation. Single-item clauses can appear on one line, while clauses with multiple items should be listed on subsequent lines. For example:
 
-::
+.. code-block:: SQL
+    :linenos:
 
     select
         id
@@ -39,7 +43,8 @@ Because the select clause is comprised of multiple items, so each appears indent
 ========
 I like to put joins on a singular line, including the on clause, like so:
 
-::
+.. code-block:: SQL
+    :linenos:
     
     from
         orders as o
@@ -51,10 +56,13 @@ A pk/fk should be consistently named across tables to make joins obvious.
 
 5. snake_case for field names
 =============================
-| snake_case is easier to read than camelCase. Also, spell things out rather than using cryptic acronyms. For example:
-|
-|   ``select order_net_amount_with_tax from orders`` = good
-|   ``select orderNetAmountWithTax from orders`` = bad
+snake_case is easier to read than camelCase. Also, spell things out rather than using cryptic acronyms. For example:
+
+.. code-block:: SQL
+    :linenos:
+
+    select order_net_amount_with_tax from orders --good
+    select orderNetAmountWithTax from orders --bad
 
 6. Prefer CTEs over sub-queries
 ===============================
@@ -78,7 +86,8 @@ A hotly-contested matter of personal preference, I've come to embrace putting co
 
 Compare the following:
 
-::
+.. code-block:: SQL
+    :linenos:
 
     SELECT
         pk,
@@ -90,7 +99,8 @@ Compare the following:
 
 vs
 
-::
+.. code-block:: SQL
+    :linenos:
 
     SELECT
         pk
@@ -100,7 +110,7 @@ vs
     FROM
         customers
 
-Did you even notice that the first example is incorrect?
+Did you even notice that the first example has is incorrect and will error?
 
 10. Avoid quotation marks
 =========================
@@ -125,17 +135,19 @@ Picked some of these up from `www.sqlstyle.guide`_, while others are work conven
 ==========================================
 I like this one because it makes for more readable queries later. If you start a boolean field with ``is_`` or ``has_``, then using it to filter (a common pattern) results in a very human-readable code snippet. For example:
 
-::
-    
+.. code-block:: SQL
+    :linenos:
+
     select order_id
     from orders
-    where is_first_order = true
+    where has_first_order
 
 14. ``between`` > ``and`` while ``in`` > multiple ``or`` clauses
 ======================================================================================
 An example to illustrate the point:
 
-::
+.. code-block:: SQL
+    :linenos:
 
     select name
     from people
@@ -148,7 +160,8 @@ An example to illustrate the point:
 
 vs
 
-::
+.. code-block:: SQL
+    :linenos:
 
     select name
     from people

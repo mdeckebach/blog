@@ -22,7 +22,8 @@ That's not to say that everything was roses and sunshine. Below are the three bi
 
 When I first started tinkering with the idea of simulating a call center queue, I had no idea what I was doing. I created a naive loop like this, where each iteration represented one second in the time period:
 
-::
+.. code-block:: JavaScript
+    :linenos:
 
     for second in total_seconds:
         if second in contact_start_times:
@@ -66,12 +67,11 @@ To provide a bit of feedback to the user, I thought to add a progress bar to the
 
 I'm no expert, but here's what I ended up with:
 
-::
+.. code-block:: JavaScript
+    :linenos:
 
-    /**
-    * On Submit Functions - runs whenever form is submitted
-    */
-
+    // On Submit Functions - runs whenever form is submitted
+    
     // Initialize worker and listener for form submission
     var worker = null;
     if (window.Worker) {
@@ -94,12 +94,12 @@ I'm no expert, but here's what I ended up with:
         return dict;
     }
 
-|
-| This is from my main JavaScript file, which contains all eventListeners. Any time the form is submitted, it creates a Web Worker and passes it a dictionary containing all the form's input values.
+This is from my main JavaScript file, which contains all eventListeners. Any time the form is submitted, it creates a Web Worker and passes it a dictionary containing all the form's input values.
 
 The Worker itself is set up to receive this dict, then it triggers the underlying Erlang C and Simulation code in the calc() function. Periodically, throughout the calc() function it passes back a message containing its overall progress. The Simulation portion has much greater time complexity than Erlang C, so for simplicity sake I calculate progress as the % of the simulation.
 
-::
+.. code-block:: JavaScript
+    :linenos:
 
     self.addEventListener("message", onMessageReceive);
 
@@ -127,11 +127,10 @@ The Worker itself is set up to receive this dict, then it triggers the underlyin
 
 Finally, the main.js file has a simple switch function to take these progress updates and update the progress bar accordingly:
 
-::
+.. code-block:: JavaScript
+    :linenos:
 
-    /**
-    * On Message Receipt Functions - runs whenever worker sends progress update or completes
-    */
+    // On Message Receipt Functions - runs whenever worker sends progress update or completes
 
     // Listener for when worker sends a message back
     worker.addEventListener("message", onMessageReceive);
