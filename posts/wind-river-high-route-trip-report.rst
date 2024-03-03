@@ -177,5 +177,9 @@ At the same time, the WRHR was definitely a humbling experience. I learned that 
 
 That said, we're 100% coming back to finish this one off. Stay tuned.
 
+|
+| **2023 Update: We went back and finished!** `Read Part 2 here`_
+
 .. _KCHBR: /writing/kings-canyon-high-basin-route-trip-report/
 .. _`You can find my gear list here`: /files/wind-river-high-route-gear-list.pdf
+.. _`Read Part 2 here`: /writing/trip-report-wind-river-high-route-part-2
