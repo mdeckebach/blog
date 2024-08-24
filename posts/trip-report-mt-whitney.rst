@@ -1,7 +1,7 @@
 .. title: Trip Report: Mt Whitney
 .. slug: trip-report-mt-whitney
 .. date: 2023-06-18 11:23:47 UTC-07:00
-.. tags: Trip Reports, Hiking
+.. tags: Trip Reports, Hiking, SPS List
 .. category: 
 .. link: 
 .. description: 
