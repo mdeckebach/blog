@@ -72,46 +72,46 @@ S">
 <p>IntelliSense on modern IDEs makes capitalization obsolete.</p>
 <div class="code"><table class="codetable">
 <tr>
-<td class="linenos linenodiv"><a href="#rest_code_c5ea1d8ee6934cb4885adbfcbee4db99-1"><code data-line-number="1"></code></a></td>
-<td class="code"><code><a id="rest_code_c5ea1d8ee6934cb4885adbfcbee4db99-1" name="rest_code_c5ea1d8ee6934cb4885adbfcbee4db99-1"></a><span class="k">select</span><span class="w"> </span><span class="n">pk</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">orders</span><span class="w"> </span><span class="c1">--good</span>
+<td class="linenos linenodiv"><a href="#rest_code_414050f9bfc94befaf8894af92b57b44-1"><code data-line-number="1"></code></a></td>
+<td class="code"><code><a id="rest_code_414050f9bfc94befaf8894af92b57b44-1" name="rest_code_414050f9bfc94befaf8894af92b57b44-1"></a><span class="k">select</span><span class="w"> </span><span class="n">pk</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">orders</span><span class="w"> </span><span class="c1">--good</span>
 </code></td>
 </tr>
 <tr>
-<td class="linenos linenodiv"><a href="#rest_code_c5ea1d8ee6934cb4885adbfcbee4db99-2"><code data-line-number="2"></code></a></td>
-<td class="code"><code><a id="rest_code_c5ea1d8ee6934cb4885adbfcbee4db99-2" name="rest_code_c5ea1d8ee6934cb4885adbfcbee4db99-2"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">pk</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">orders</span><span class="w"> </span><span class="c1">--bad/unnecessary</span>
+<td class="linenos linenodiv"><a href="#rest_code_414050f9bfc94befaf8894af92b57b44-2"><code data-line-number="2"></code></a></td>
+<td class="code"><code><a id="rest_code_414050f9bfc94befaf8894af92b57b44-2" name="rest_code_414050f9bfc94befaf8894af92b57b44-2"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">pk</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">orders</span><span class="w"> </span><span class="c1">--bad/unnecessary</span>
 </code></td>
 </tr>
 <tr>
-<td class="linenos linenodiv"><a href="#rest_code_c5ea1d8ee6934cb4885adbfcbee4db99-3"><code data-line-number="3"></code></a></td>
-<td class="code"><code><a id="rest_code_c5ea1d8ee6934cb4885adbfcbee4db99-3" name="rest_code_c5ea1d8ee6934cb4885adbfcbee4db99-3"></a><span class="k">sElEcT</span><span class="w"> </span><span class="n">pk</span><span class="w"> </span><span class="k">fRoM</span><span class="w"> </span><span class="n">orders</span><span class="w"> </span><span class="c1">--insane</span>
+<td class="linenos linenodiv"><a href="#rest_code_414050f9bfc94befaf8894af92b57b44-3"><code data-line-number="3"></code></a></td>
+<td class="code"><code><a id="rest_code_414050f9bfc94befaf8894af92b57b44-3" name="rest_code_414050f9bfc94befaf8894af92b57b44-3"></a><span class="k">sElEcT</span><span class="w"> </span><span class="n">pk</span><span class="w"> </span><span class="k">fRoM</span><span class="w"> </span><span class="n">orders</span><span class="w"> </span><span class="c1">--insane</span>
 </code></td>
 </tr>
 </table></div></section><section id="indentation"><h2>2. Indentation</h2>
 <p>Clauses should always be at the same level of indentation. Single-item clauses can appear on one line, while clauses with multiple items should be listed on subsequent lines. For example:</p>
 <div class="code"><table class="codetable">
 <tr>
-<td class="linenos linenodiv"><a href="#rest_code_293e693455cb4942a9e9f2a4d450d8ff-1"><code data-line-number="1"></code></a></td>
-<td class="code"><code><a id="rest_code_293e693455cb4942a9e9f2a4d450d8ff-1" name="rest_code_293e693455cb4942a9e9f2a4d450d8ff-1"></a><span class="k">select</span><span class="w"></span>
+<td class="linenos linenodiv"><a href="#rest_code_a3cc918d509e4a158f1217a96f19ba74-1"><code data-line-number="1"></code></a></td>
+<td class="code"><code><a id="rest_code_a3cc918d509e4a158f1217a96f19ba74-1" name="rest_code_a3cc918d509e4a158f1217a96f19ba74-1"></a><span class="k">select</span>
 </code></td>
 </tr>
 <tr>
-<td class="linenos linenodiv"><a href="#rest_code_293e693455cb4942a9e9f2a4d450d8ff-2"><code data-line-number="2"></code></a></td>
-<td class="code"><code><a id="rest_code_293e693455cb4942a9e9f2a4d450d8ff-2" name="rest_code_293e693455cb4942a9e9f2a4d450d8ff-2"></a><span class="w">    </span><span class="n">id</span><span class="w"></span>
+<td class="linenos linenodiv"><a href="#rest_code_a3cc918d509e4a158f1217a96f19ba74-2"><code data-line-number="2"></code></a></td>
+<td class="code"><code><a id="rest_code_a3cc918d509e4a158f1217a96f19ba74-2" name="rest_code_a3cc918d509e4a158f1217a96f19ba74-2"></a><span class="w">    </span><span class="n">id</span>
 </code></td>
 </tr>
 <tr>
-<td class="linenos linenodiv"><a href="#rest_code_293e693455cb4942a9e9f2a4d450d8ff-3"><code data-line-number="3"></code></a></td>
-<td class="code"><code><a id="rest_code_293e693455cb4942a9e9f2a4d450d8ff-3" name="rest_code_293e693455cb4942a9e9f2a4d450d8ff-3"></a><span class="w">    </span><span class="p">,</span><span class="n">amount</span><span class="w"></span>
+<td class="linenos linenodiv"><a href="#rest_code_a3cc918d509e4a158f1217a96f19ba74-3"><code data-line-number="3"></code></a></td>
+<td class="code"><code><a id="rest_code_a3cc918d509e4a158f1217a96f19ba74-3" name="rest_code_a3cc918d509e4a158f1217a96f19ba74-3"></a><span class="w">    </span><span class="p">,</span><span class="n">amount</span>
 </code></td>
 </tr>
 <tr>
-<td class="linenos linenodiv"><a href="#rest_code_293e693455cb4942a9e9f2a4d450d8ff-4"><code data-line-number="4"></code></a></td>
-<td class="code"><code><a id="rest_code_293e693455cb4942a9e9f2a4d450d8ff-4" name="rest_code_293e693455cb4942a9e9f2a4d450d8ff-4"></a><span class="w">    </span><span class="p">,</span><span class="nb">date</span><span class="w"></span>
+<td class="linenos linenodiv"><a href="#rest_code_a3cc918d509e4a158f1217a96f19ba74-4"><code data-line-number="4"></code></a></td>
+<td class="code"><code><a id="rest_code_a3cc918d509e4a158f1217a96f19ba74-4" name="rest_code_a3cc918d509e4a158f1217a96f19ba74-4"></a><span class="w">    </span><span class="p">,</span><span class="nb">date</span>
 </code></td>
 </tr>
 <tr>
-<td class="linenos linenodiv"><a href="#rest_code_293e693455cb4942a9e9f2a4d450d8ff-5"><code data-line-number="5"></code></a></td>
-<td class="code"><code><a id="rest_code_293e693455cb4942a9e9f2a4d450d8ff-5" name="rest_code_293e693455cb4942a9e9f2a4d450d8ff-5"></a><span class="k">from</span><span class="w"> </span><span class="n">orders</span><span class="w"></span>
+<td class="linenos linenodiv"><a href="#rest_code_a3cc918d509e4a158f1217a96f19ba74-5"><code data-line-number="5"></code></a></td>
+<td class="code"><code><a id="rest_code_a3cc918d509e4a158f1217a96f19ba74-5" name="rest_code_a3cc918d509e4a158f1217a96f19ba74-5"></a><span class="k">from</span><span class="w"> </span><span class="n">orders</span>
 </code></td>
 </tr>
 </table></div>
@@ -120,18 +120,18 @@ S">
 <p>I like to put joins on a singular line, including the on clause, like so:</p>
 <div class="code"><table class="codetable">
 <tr>
-<td class="linenos linenodiv"><a href="#rest_code_b7557eecdc64472cb7e34fdeeebf376c-1"><code data-line-number="1"></code></a></td>
-<td class="code"><code><a id="rest_code_b7557eecdc64472cb7e34fdeeebf376c-1" name="rest_code_b7557eecdc64472cb7e34fdeeebf376c-1"></a><span class="k">from</span><span class="w"></span>
+<td class="linenos linenodiv"><a href="#rest_code_4b2aca999dad4acbaee6912f7fe34414-1"><code data-line-number="1"></code></a></td>
+<td class="code"><code><a id="rest_code_4b2aca999dad4acbaee6912f7fe34414-1" name="rest_code_4b2aca999dad4acbaee6912f7fe34414-1"></a><span class="k">from</span>
 </code></td>
 </tr>
 <tr>
-<td class="linenos linenodiv"><a href="#rest_code_b7557eecdc64472cb7e34fdeeebf376c-2"><code data-line-number="2"></code></a></td>
-<td class="code"><code><a id="rest_code_b7557eecdc64472cb7e34fdeeebf376c-2" name="rest_code_b7557eecdc64472cb7e34fdeeebf376c-2"></a><span class="w">    </span><span class="n">orders</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">o</span><span class="w"></span>
+<td class="linenos linenodiv"><a href="#rest_code_4b2aca999dad4acbaee6912f7fe34414-2"><code data-line-number="2"></code></a></td>
+<td class="code"><code><a id="rest_code_4b2aca999dad4acbaee6912f7fe34414-2" name="rest_code_4b2aca999dad4acbaee6912f7fe34414-2"></a><span class="w">    </span><span class="n">orders</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">o</span>
 </code></td>
 </tr>
 <tr>
-<td class="linenos linenodiv"><a href="#rest_code_b7557eecdc64472cb7e34fdeeebf376c-3"><code data-line-number="3"></code></a></td>
-<td class="code"><code><a id="rest_code_b7557eecdc64472cb7e34fdeeebf376c-3" name="rest_code_b7557eecdc64472cb7e34fdeeebf376c-3"></a><span class="w">    </span><span class="k">left</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="n">customers</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="k">c</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">customer_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="n">customer_id</span><span class="w"></span>
+<td class="linenos linenodiv"><a href="#rest_code_4b2aca999dad4acbaee6912f7fe34414-3"><code data-line-number="3"></code></a></td>
+<td class="code"><code><a id="rest_code_4b2aca999dad4acbaee6912f7fe34414-3" name="rest_code_4b2aca999dad4acbaee6912f7fe34414-3"></a><span class="w">    </span><span class="k">left</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="n">customers</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="k">c</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">customer_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="n">customer_id</span>
 </code></td>
 </tr>
 </table></div></section><section id="consistent-naming"><h2>4. Consistent naming</h2>
@@ -140,13 +140,13 @@ S">
 <p>snake_case is easier to read than camelCase. Also, spell things out rather than using cryptic acronyms. For example:</p>
 <div class="code"><table class="codetable">
 <tr>
-<td class="linenos linenodiv"><a href="#rest_code_f945d863f9f442579d5e4842ec80a14a-1"><code data-line-number="1"></code></a></td>
-<td class="code"><code><a id="rest_code_f945d863f9f442579d5e4842ec80a14a-1" name="rest_code_f945d863f9f442579d5e4842ec80a14a-1"></a><span class="k">select</span><span class="w"> </span><span class="n">order_net_amount_with_tax</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">orders</span><span class="w"> </span><span class="c1">--good</span>
+<td class="linenos linenodiv"><a href="#rest_code_e086426f96934744ba822430e9b78dfa-1"><code data-line-number="1"></code></a></td>
+<td class="code"><code><a id="rest_code_e086426f96934744ba822430e9b78dfa-1" name="rest_code_e086426f96934744ba822430e9b78dfa-1"></a><span class="k">select</span><span class="w"> </span><span class="n">order_net_amount_with_tax</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">orders</span><span class="w"> </span><span class="c1">--good</span>
 </code></td>
 </tr>
 <tr>
-<td class="linenos linenodiv"><a href="#rest_code_f945d863f9f442579d5e4842ec80a14a-2"><code data-line-number="2"></code></a></td>
-<td class="code"><code><a id="rest_code_f945d863f9f442579d5e4842ec80a14a-2" name="rest_code_f945d863f9f442579d5e4842ec80a14a-2"></a><span class="k">select</span><span class="w"> </span><span class="n">orderNetAmountWithTax</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">orders</span><span class="w"> </span><span class="c1">--bad</span>
+<td class="linenos linenodiv"><a href="#rest_code_e086426f96934744ba822430e9b78dfa-2"><code data-line-number="2"></code></a></td>
+<td class="code"><code><a id="rest_code_e086426f96934744ba822430e9b78dfa-2" name="rest_code_e086426f96934744ba822430e9b78dfa-2"></a><span class="k">select</span><span class="w"> </span><span class="n">orderNetAmountWithTax</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">orders</span><span class="w"> </span><span class="c1">--bad</span>
 </code></td>
 </tr>
 </table></div></section><section id="prefer-ctes-over-sub-queries"><h2>6. Prefer CTEs over sub-queries</h2>
@@ -166,76 +166,76 @@ S">
 <p>Compare the following:</p>
 <div class="code"><table class="codetable">
 <tr>
-<td class="linenos linenodiv"><a href="#rest_code_187ab54dd6b242c0b1454e9c41abe45c-1"><code data-line-number="1"></code></a></td>
-<td class="code"><code><a id="rest_code_187ab54dd6b242c0b1454e9c41abe45c-1" name="rest_code_187ab54dd6b242c0b1454e9c41abe45c-1"></a><span class="k">SELECT</span><span class="w"></span>
+<td class="linenos linenodiv"><a href="#rest_code_20683c9041374a5d863808ba0349d886-1"><code data-line-number="1"></code></a></td>
+<td class="code"><code><a id="rest_code_20683c9041374a5d863808ba0349d886-1" name="rest_code_20683c9041374a5d863808ba0349d886-1"></a><span class="k">SELECT</span>
 </code></td>
 </tr>
 <tr>
-<td class="linenos linenodiv"><a href="#rest_code_187ab54dd6b242c0b1454e9c41abe45c-2"><code data-line-number="2"></code></a></td>
-<td class="code"><code><a id="rest_code_187ab54dd6b242c0b1454e9c41abe45c-2" name="rest_code_187ab54dd6b242c0b1454e9c41abe45c-2"></a><span class="w">    </span><span class="n">pk</span><span class="p">,</span><span class="w"></span>
+<td class="linenos linenodiv"><a href="#rest_code_20683c9041374a5d863808ba0349d886-2"><code data-line-number="2"></code></a></td>
+<td class="code"><code><a id="rest_code_20683c9041374a5d863808ba0349d886-2" name="rest_code_20683c9041374a5d863808ba0349d886-2"></a><span class="w">    </span><span class="n">pk</span><span class="p">,</span>
 </code></td>
 </tr>
 <tr>
-<td class="linenos linenodiv"><a href="#rest_code_187ab54dd6b242c0b1454e9c41abe45c-3"><code data-line-number="3"></code></a></td>
-<td class="code"><code><a id="rest_code_187ab54dd6b242c0b1454e9c41abe45c-3" name="rest_code_187ab54dd6b242c0b1454e9c41abe45c-3"></a><span class="w">    </span><span class="n">name</span><span class="p">,</span><span class="w"></span>
+<td class="linenos linenodiv"><a href="#rest_code_20683c9041374a5d863808ba0349d886-3"><code data-line-number="3"></code></a></td>
+<td class="code"><code><a id="rest_code_20683c9041374a5d863808ba0349d886-3" name="rest_code_20683c9041374a5d863808ba0349d886-3"></a><span class="w">    </span><span class="n">name</span><span class="p">,</span>
 </code></td>
 </tr>
 <tr>
-<td class="linenos linenodiv"><a href="#rest_code_187ab54dd6b242c0b1454e9c41abe45c-4"><code data-line-number="4"></code></a></td>
-<td class="code"><code><a id="rest_code_187ab54dd6b242c0b1454e9c41abe45c-4" name="rest_code_187ab54dd6b242c0b1454e9c41abe45c-4"></a><span class="w">    </span><span class="n">age</span><span class="p">,</span><span class="w"></span>
+<td class="linenos linenodiv"><a href="#rest_code_20683c9041374a5d863808ba0349d886-4"><code data-line-number="4"></code></a></td>
+<td class="code"><code><a id="rest_code_20683c9041374a5d863808ba0349d886-4" name="rest_code_20683c9041374a5d863808ba0349d886-4"></a><span class="w">    </span><span class="n">age</span><span class="p">,</span>
 </code></td>
 </tr>
 <tr>
-<td class="linenos linenodiv"><a href="#rest_code_187ab54dd6b242c0b1454e9c41abe45c-5"><code data-line-number="5"></code></a></td>
-<td class="code"><code><a id="rest_code_187ab54dd6b242c0b1454e9c41abe45c-5" name="rest_code_187ab54dd6b242c0b1454e9c41abe45c-5"></a><span class="w">    </span><span class="n">birthdate</span><span class="p">,</span><span class="w"></span>
+<td class="linenos linenodiv"><a href="#rest_code_20683c9041374a5d863808ba0349d886-5"><code data-line-number="5"></code></a></td>
+<td class="code"><code><a id="rest_code_20683c9041374a5d863808ba0349d886-5" name="rest_code_20683c9041374a5d863808ba0349d886-5"></a><span class="w">    </span><span class="n">birthdate</span><span class="p">,</span>
 </code></td>
 </tr>
 <tr>
-<td class="linenos linenodiv"><a href="#rest_code_187ab54dd6b242c0b1454e9c41abe45c-6"><code data-line-number="6"></code></a></td>
-<td class="code"><code><a id="rest_code_187ab54dd6b242c0b1454e9c41abe45c-6" name="rest_code_187ab54dd6b242c0b1454e9c41abe45c-6"></a><span class="k">FROM</span><span class="w"></span>
+<td class="linenos linenodiv"><a href="#rest_code_20683c9041374a5d863808ba0349d886-6"><code data-line-number="6"></code></a></td>
+<td class="code"><code><a id="rest_code_20683c9041374a5d863808ba0349d886-6" name="rest_code_20683c9041374a5d863808ba0349d886-6"></a><span class="k">FROM</span>
 </code></td>
 </tr>
 <tr>
-<td class="linenos linenodiv"><a href="#rest_code_187ab54dd6b242c0b1454e9c41abe45c-7"><code data-line-number="7"></code></a></td>
-<td class="code"><code><a id="rest_code_187ab54dd6b242c0b1454e9c41abe45c-7" name="rest_code_187ab54dd6b242c0b1454e9c41abe45c-7"></a><span class="w">    </span><span class="n">customers</span><span class="w"></span>
+<td class="linenos linenodiv"><a href="#rest_code_20683c9041374a5d863808ba0349d886-7"><code data-line-number="7"></code></a></td>
+<td class="code"><code><a id="rest_code_20683c9041374a5d863808ba0349d886-7" name="rest_code_20683c9041374a5d863808ba0349d886-7"></a><span class="w">    </span><span class="n">customers</span>
 </code></td>
 </tr>
 </table></div>
 <p>vs</p>
 <div class="code"><table class="codetable">
 <tr>
-<td class="linenos linenodiv"><a href="#rest_code_62075ba9e04d4490bde7e0b0ff2026fe-1"><code data-line-number="1"></code></a></td>
-<td class="code"><code><a id="rest_code_62075ba9e04d4490bde7e0b0ff2026fe-1" name="rest_code_62075ba9e04d4490bde7e0b0ff2026fe-1"></a><span class="k">SELECT</span><span class="w"></span>
+<td class="linenos linenodiv"><a href="#rest_code_eea885dfdbe748c49887efc2cc6dc68b-1"><code data-line-number="1"></code></a></td>
+<td class="code"><code><a id="rest_code_eea885dfdbe748c49887efc2cc6dc68b-1" name="rest_code_eea885dfdbe748c49887efc2cc6dc68b-1"></a><span class="k">SELECT</span>
 </code></td>
 </tr>
 <tr>
-<td class="linenos linenodiv"><a href="#rest_code_62075ba9e04d4490bde7e0b0ff2026fe-2"><code data-line-number="2"></code></a></td>
-<td class="code"><code><a id="rest_code_62075ba9e04d4490bde7e0b0ff2026fe-2" name="rest_code_62075ba9e04d4490bde7e0b0ff2026fe-2"></a><span class="w">    </span><span class="n">pk</span><span class="w"></span>
+<td class="linenos linenodiv"><a href="#rest_code_eea885dfdbe748c49887efc2cc6dc68b-2"><code data-line-number="2"></code></a></td>
+<td class="code"><code><a id="rest_code_eea885dfdbe748c49887efc2cc6dc68b-2" name="rest_code_eea885dfdbe748c49887efc2cc6dc68b-2"></a><span class="w">    </span><span class="n">pk</span>
 </code></td>
 </tr>
 <tr>
-<td class="linenos linenodiv"><a href="#rest_code_62075ba9e04d4490bde7e0b0ff2026fe-3"><code data-line-number="3"></code></a></td>
-<td class="code"><code><a id="rest_code_62075ba9e04d4490bde7e0b0ff2026fe-3" name="rest_code_62075ba9e04d4490bde7e0b0ff2026fe-3"></a><span class="w">    </span><span class="p">,</span><span class="n">name</span><span class="w"></span>
+<td class="linenos linenodiv"><a href="#rest_code_eea885dfdbe748c49887efc2cc6dc68b-3"><code data-line-number="3"></code></a></td>
+<td class="code"><code><a id="rest_code_eea885dfdbe748c49887efc2cc6dc68b-3" name="rest_code_eea885dfdbe748c49887efc2cc6dc68b-3"></a><span class="w">    </span><span class="p">,</span><span class="n">name</span>
 </code></td>
 </tr>
 <tr>
-<td class="linenos linenodiv"><a href="#rest_code_62075ba9e04d4490bde7e0b0ff2026fe-4"><code data-line-number="4"></code></a></td>
-<td class="code"><code><a id="rest_code_62075ba9e04d4490bde7e0b0ff2026fe-4" name="rest_code_62075ba9e04d4490bde7e0b0ff2026fe-4"></a><span class="w">    </span><span class="p">,</span><span class="n">age</span><span class="w"></span>
+<td class="linenos linenodiv"><a href="#rest_code_eea885dfdbe748c49887efc2cc6dc68b-4"><code data-line-number="4"></code></a></td>
+<td class="code"><code><a id="rest_code_eea885dfdbe748c49887efc2cc6dc68b-4" name="rest_code_eea885dfdbe748c49887efc2cc6dc68b-4"></a><span class="w">    </span><span class="p">,</span><span class="n">age</span>
 </code></td>
 </tr>
 <tr>
-<td class="linenos linenodiv"><a href="#rest_code_62075ba9e04d4490bde7e0b0ff2026fe-5"><code data-line-number="5"></code></a></td>
-<td class="code"><code><a id="rest_code_62075ba9e04d4490bde7e0b0ff2026fe-5" name="rest_code_62075ba9e04d4490bde7e0b0ff2026fe-5"></a><span class="w">    </span><span class="p">,</span><span class="n">birthdate</span><span class="w"></span>
+<td class="linenos linenodiv"><a href="#rest_code_eea885dfdbe748c49887efc2cc6dc68b-5"><code data-line-number="5"></code></a></td>
+<td class="code"><code><a id="rest_code_eea885dfdbe748c49887efc2cc6dc68b-5" name="rest_code_eea885dfdbe748c49887efc2cc6dc68b-5"></a><span class="w">    </span><span class="p">,</span><span class="n">birthdate</span>
 </code></td>
 </tr>
 <tr>
-<td class="linenos linenodiv"><a href="#rest_code_62075ba9e04d4490bde7e0b0ff2026fe-6"><code data-line-number="6"></code></a></td>
-<td class="code"><code><a id="rest_code_62075ba9e04d4490bde7e0b0ff2026fe-6" name="rest_code_62075ba9e04d4490bde7e0b0ff2026fe-6"></a><span class="k">FROM</span><span class="w"></span>
+<td class="linenos linenodiv"><a href="#rest_code_eea885dfdbe748c49887efc2cc6dc68b-6"><code data-line-number="6"></code></a></td>
+<td class="code"><code><a id="rest_code_eea885dfdbe748c49887efc2cc6dc68b-6" name="rest_code_eea885dfdbe748c49887efc2cc6dc68b-6"></a><span class="k">FROM</span>
 </code></td>
 </tr>
 <tr>
-<td class="linenos linenodiv"><a href="#rest_code_62075ba9e04d4490bde7e0b0ff2026fe-7"><code data-line-number="7"></code></a></td>
-<td class="code"><code><a id="rest_code_62075ba9e04d4490bde7e0b0ff2026fe-7" name="rest_code_62075ba9e04d4490bde7e0b0ff2026fe-7"></a><span class="w">    </span><span class="n">customers</span><span class="w"></span>
+<td class="linenos linenodiv"><a href="#rest_code_eea885dfdbe748c49887efc2cc6dc68b-7"><code data-line-number="7"></code></a></td>
+<td class="code"><code><a id="rest_code_eea885dfdbe748c49887efc2cc6dc68b-7" name="rest_code_eea885dfdbe748c49887efc2cc6dc68b-7"></a><span class="w">    </span><span class="n">customers</span>
 </code></td>
 </tr>
 </table></div>
@@ -263,89 +263,89 @@ S">
 <p>I like this one because it makes for more readable queries later. If you start a boolean field with <code class="docutils literal">is_</code> or <code class="docutils literal">has_</code>, then using it to filter (a common pattern) results in a very human-readable code snippet. For example:</p>
 <div class="code"><table class="codetable">
 <tr>
-<td class="linenos linenodiv"><a href="#rest_code_c625977c2d7b4cdbba52e477f6506809-1"><code data-line-number="1"></code></a></td>
-<td class="code"><code><a id="rest_code_c625977c2d7b4cdbba52e477f6506809-1" name="rest_code_c625977c2d7b4cdbba52e477f6506809-1"></a><span class="k">select</span><span class="w"> </span><span class="n">order_id</span><span class="w"></span>
+<td class="linenos linenodiv"><a href="#rest_code_321992de6aa042b7b012fab116caccbc-1"><code data-line-number="1"></code></a></td>
+<td class="code"><code><a id="rest_code_321992de6aa042b7b012fab116caccbc-1" name="rest_code_321992de6aa042b7b012fab116caccbc-1"></a><span class="k">select</span><span class="w"> </span><span class="n">order_id</span>
 </code></td>
 </tr>
 <tr>
-<td class="linenos linenodiv"><a href="#rest_code_c625977c2d7b4cdbba52e477f6506809-2"><code data-line-number="2"></code></a></td>
-<td class="code"><code><a id="rest_code_c625977c2d7b4cdbba52e477f6506809-2" name="rest_code_c625977c2d7b4cdbba52e477f6506809-2"></a><span class="k">from</span><span class="w"> </span><span class="n">orders</span><span class="w"></span>
+<td class="linenos linenodiv"><a href="#rest_code_321992de6aa042b7b012fab116caccbc-2"><code data-line-number="2"></code></a></td>
+<td class="code"><code><a id="rest_code_321992de6aa042b7b012fab116caccbc-2" name="rest_code_321992de6aa042b7b012fab116caccbc-2"></a><span class="k">from</span><span class="w"> </span><span class="n">orders</span>
 </code></td>
 </tr>
 <tr>
-<td class="linenos linenodiv"><a href="#rest_code_c625977c2d7b4cdbba52e477f6506809-3"><code data-line-number="3"></code></a></td>
-<td class="code"><code><a id="rest_code_c625977c2d7b4cdbba52e477f6506809-3" name="rest_code_c625977c2d7b4cdbba52e477f6506809-3"></a><span class="k">where</span><span class="w"> </span><span class="n">has_first_order</span><span class="w"></span>
+<td class="linenos linenodiv"><a href="#rest_code_321992de6aa042b7b012fab116caccbc-3"><code data-line-number="3"></code></a></td>
+<td class="code"><code><a id="rest_code_321992de6aa042b7b012fab116caccbc-3" name="rest_code_321992de6aa042b7b012fab116caccbc-3"></a><span class="k">where</span><span class="w"> </span><span class="n">has_first_order</span>
 </code></td>
 </tr>
 </table></div></section><section id="between-and-while-in-multiple-or-clauses"><h2>14. <code class="docutils literal">between</code> &gt; <code class="docutils literal">and</code> while <code class="docutils literal">in</code> &gt; multiple <code class="docutils literal">or</code> clauses</h2>
 <p>An example to illustrate the point:</p>
 <div class="code"><table class="codetable">
 <tr>
-<td class="linenos linenodiv"><a href="#rest_code_b1af76fc3c2347a6ba4a78219b1fa55d-1"><code data-line-number="1"></code></a></td>
-<td class="code"><code><a id="rest_code_b1af76fc3c2347a6ba4a78219b1fa55d-1" name="rest_code_b1af76fc3c2347a6ba4a78219b1fa55d-1"></a><span class="k">select</span><span class="w"> </span><span class="n">name</span><span class="w"></span>
+<td class="linenos linenodiv"><a href="#rest_code_425e0fc5edb145048e322503a746bbcc-1"><code data-line-number="1"></code></a></td>
+<td class="code"><code><a id="rest_code_425e0fc5edb145048e322503a746bbcc-1" name="rest_code_425e0fc5edb145048e322503a746bbcc-1"></a><span class="k">select</span><span class="w"> </span><span class="n">name</span>
 </code></td>
 </tr>
 <tr>
-<td class="linenos linenodiv"><a href="#rest_code_b1af76fc3c2347a6ba4a78219b1fa55d-2"><code data-line-number="2"></code></a></td>
-<td class="code"><code><a id="rest_code_b1af76fc3c2347a6ba4a78219b1fa55d-2" name="rest_code_b1af76fc3c2347a6ba4a78219b1fa55d-2"></a><span class="k">from</span><span class="w"> </span><span class="n">people</span><span class="w"></span>
+<td class="linenos linenodiv"><a href="#rest_code_425e0fc5edb145048e322503a746bbcc-2"><code data-line-number="2"></code></a></td>
+<td class="code"><code><a id="rest_code_425e0fc5edb145048e322503a746bbcc-2" name="rest_code_425e0fc5edb145048e322503a746bbcc-2"></a><span class="k">from</span><span class="w"> </span><span class="n">people</span>
 </code></td>
 </tr>
 <tr>
-<td class="linenos linenodiv"><a href="#rest_code_b1af76fc3c2347a6ba4a78219b1fa55d-3"><code data-line-number="3"></code></a></td>
-<td class="code"><code><a id="rest_code_b1af76fc3c2347a6ba4a78219b1fa55d-3" name="rest_code_b1af76fc3c2347a6ba4a78219b1fa55d-3"></a><span class="k">where</span><span class="w"></span>
+<td class="linenos linenodiv"><a href="#rest_code_425e0fc5edb145048e322503a746bbcc-3"><code data-line-number="3"></code></a></td>
+<td class="code"><code><a id="rest_code_425e0fc5edb145048e322503a746bbcc-3" name="rest_code_425e0fc5edb145048e322503a746bbcc-3"></a><span class="k">where</span>
 </code></td>
 </tr>
 <tr>
-<td class="linenos linenodiv"><a href="#rest_code_b1af76fc3c2347a6ba4a78219b1fa55d-4"><code data-line-number="4"></code></a></td>
-<td class="code"><code><a id="rest_code_b1af76fc3c2347a6ba4a78219b1fa55d-4" name="rest_code_b1af76fc3c2347a6ba4a78219b1fa55d-4"></a><span class="w">    </span><span class="n">age</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">20</span><span class="w"></span>
+<td class="linenos linenodiv"><a href="#rest_code_425e0fc5edb145048e322503a746bbcc-4"><code data-line-number="4"></code></a></td>
+<td class="code"><code><a id="rest_code_425e0fc5edb145048e322503a746bbcc-4" name="rest_code_425e0fc5edb145048e322503a746bbcc-4"></a><span class="w">    </span><span class="n">age</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">20</span>
 </code></td>
 </tr>
 <tr>
-<td class="linenos linenodiv"><a href="#rest_code_b1af76fc3c2347a6ba4a78219b1fa55d-5"><code data-line-number="5"></code></a></td>
-<td class="code"><code><a id="rest_code_b1af76fc3c2347a6ba4a78219b1fa55d-5" name="rest_code_b1af76fc3c2347a6ba4a78219b1fa55d-5"></a><span class="w">    </span><span class="k">and</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">30</span><span class="w"></span>
+<td class="linenos linenodiv"><a href="#rest_code_425e0fc5edb145048e322503a746bbcc-5"><code data-line-number="5"></code></a></td>
+<td class="code"><code><a id="rest_code_425e0fc5edb145048e322503a746bbcc-5" name="rest_code_425e0fc5edb145048e322503a746bbcc-5"></a><span class="w">    </span><span class="k">and</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">30</span>
 </code></td>
 </tr>
 <tr>
-<td class="linenos linenodiv"><a href="#rest_code_b1af76fc3c2347a6ba4a78219b1fa55d-6"><code data-line-number="6"></code></a></td>
-<td class="code"><code><a id="rest_code_b1af76fc3c2347a6ba4a78219b1fa55d-6" name="rest_code_b1af76fc3c2347a6ba4a78219b1fa55d-6"></a><span class="w">    </span><span class="k">and</span><span class="w"> </span><span class="p">(</span><span class="n">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">72</span><span class="w"></span>
+<td class="linenos linenodiv"><a href="#rest_code_425e0fc5edb145048e322503a746bbcc-6"><code data-line-number="6"></code></a></td>
+<td class="code"><code><a id="rest_code_425e0fc5edb145048e322503a746bbcc-6" name="rest_code_425e0fc5edb145048e322503a746bbcc-6"></a><span class="w">    </span><span class="k">and</span><span class="w"> </span><span class="p">(</span><span class="n">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">72</span>
 </code></td>
 </tr>
 <tr>
-<td class="linenos linenodiv"><a href="#rest_code_b1af76fc3c2347a6ba4a78219b1fa55d-7"><code data-line-number="7"></code></a></td>
-<td class="code"><code><a id="rest_code_b1af76fc3c2347a6ba4a78219b1fa55d-7" name="rest_code_b1af76fc3c2347a6ba4a78219b1fa55d-7"></a><span class="w">        </span><span class="k">or</span><span class="w"> </span><span class="n">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">74</span><span class="w"></span>
+<td class="linenos linenodiv"><a href="#rest_code_425e0fc5edb145048e322503a746bbcc-7"><code data-line-number="7"></code></a></td>
+<td class="code"><code><a id="rest_code_425e0fc5edb145048e322503a746bbcc-7" name="rest_code_425e0fc5edb145048e322503a746bbcc-7"></a><span class="w">        </span><span class="k">or</span><span class="w"> </span><span class="n">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">74</span>
 </code></td>
 </tr>
 <tr>
-<td class="linenos linenodiv"><a href="#rest_code_b1af76fc3c2347a6ba4a78219b1fa55d-8"><code data-line-number="8"></code></a></td>
-<td class="code"><code><a id="rest_code_b1af76fc3c2347a6ba4a78219b1fa55d-8" name="rest_code_b1af76fc3c2347a6ba4a78219b1fa55d-8"></a><span class="w">        </span><span class="k">or</span><span class="w"> </span><span class="n">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">76</span><span class="p">)</span><span class="w"></span>
+<td class="linenos linenodiv"><a href="#rest_code_425e0fc5edb145048e322503a746bbcc-8"><code data-line-number="8"></code></a></td>
+<td class="code"><code><a id="rest_code_425e0fc5edb145048e322503a746bbcc-8" name="rest_code_425e0fc5edb145048e322503a746bbcc-8"></a><span class="w">        </span><span class="k">or</span><span class="w"> </span><span class="n">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">76</span><span class="p">)</span>
 </code></td>
 </tr>
 </table></div>
 <p>vs</p>
 <div class="code"><table class="codetable">
 <tr>
-<td class="linenos linenodiv"><a href="#rest_code_df2cdd22409c48c0a207201bca255503-1"><code data-line-number="1"></code></a></td>
-<td class="code"><code><a id="rest_code_df2cdd22409c48c0a207201bca255503-1" name="rest_code_df2cdd22409c48c0a207201bca255503-1"></a><span class="k">select</span><span class="w"> </span><span class="n">name</span><span class="w"></span>
+<td class="linenos linenodiv"><a href="#rest_code_851e60d43bf942a581402f9bbbd06bc7-1"><code data-line-number="1"></code></a></td>
+<td class="code"><code><a id="rest_code_851e60d43bf942a581402f9bbbd06bc7-1" name="rest_code_851e60d43bf942a581402f9bbbd06bc7-1"></a><span class="k">select</span><span class="w"> </span><span class="n">name</span>
 </code></td>
 </tr>
 <tr>
-<td class="linenos linenodiv"><a href="#rest_code_df2cdd22409c48c0a207201bca255503-2"><code data-line-number="2"></code></a></td>
-<td class="code"><code><a id="rest_code_df2cdd22409c48c0a207201bca255503-2" name="rest_code_df2cdd22409c48c0a207201bca255503-2"></a><span class="k">from</span><span class="w"> </span><span class="n">people</span><span class="w"></span>
+<td class="linenos linenodiv"><a href="#rest_code_851e60d43bf942a581402f9bbbd06bc7-2"><code data-line-number="2"></code></a></td>
+<td class="code"><code><a id="rest_code_851e60d43bf942a581402f9bbbd06bc7-2" name="rest_code_851e60d43bf942a581402f9bbbd06bc7-2"></a><span class="k">from</span><span class="w"> </span><span class="n">people</span>
 </code></td>
 </tr>
 <tr>
-<td class="linenos linenodiv"><a href="#rest_code_df2cdd22409c48c0a207201bca255503-3"><code data-line-number="3"></code></a></td>
-<td class="code"><code><a id="rest_code_df2cdd22409c48c0a207201bca255503-3" name="rest_code_df2cdd22409c48c0a207201bca255503-3"></a><span class="k">where</span><span class="w"></span>
+<td class="linenos linenodiv"><a href="#rest_code_851e60d43bf942a581402f9bbbd06bc7-3"><code data-line-number="3"></code></a></td>
+<td class="code"><code><a id="rest_code_851e60d43bf942a581402f9bbbd06bc7-3" name="rest_code_851e60d43bf942a581402f9bbbd06bc7-3"></a><span class="k">where</span>
 </code></td>
 </tr>
 <tr>
-<td class="linenos linenodiv"><a href="#rest_code_df2cdd22409c48c0a207201bca255503-4"><code data-line-number="4"></code></a></td>
-<td class="code"><code><a id="rest_code_df2cdd22409c48c0a207201bca255503-4" name="rest_code_df2cdd22409c48c0a207201bca255503-4"></a><span class="w">    </span><span class="n">age</span><span class="w"> </span><span class="k">between</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="mi">30</span><span class="w"></span>
+<td class="linenos linenodiv"><a href="#rest_code_851e60d43bf942a581402f9bbbd06bc7-4"><code data-line-number="4"></code></a></td>
+<td class="code"><code><a id="rest_code_851e60d43bf942a581402f9bbbd06bc7-4" name="rest_code_851e60d43bf942a581402f9bbbd06bc7-4"></a><span class="w">    </span><span class="n">age</span><span class="w"> </span><span class="k">between</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="mi">30</span>
 </code></td>
 </tr>
 <tr>
-<td class="linenos linenodiv"><a href="#rest_code_df2cdd22409c48c0a207201bca255503-5"><code data-line-number="5"></code></a></td>
-<td class="code"><code><a id="rest_code_df2cdd22409c48c0a207201bca255503-5" name="rest_code_df2cdd22409c48c0a207201bca255503-5"></a><span class="w">    </span><span class="k">and</span><span class="w"> </span><span class="n">height</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="p">(</span><span class="mi">72</span><span class="p">,</span><span class="w"> </span><span class="mi">74</span><span class="p">,</span><span class="w"> </span><span class="mi">76</span><span class="p">)</span><span class="w"></span>
+<td class="linenos linenodiv"><a href="#rest_code_851e60d43bf942a581402f9bbbd06bc7-5"><code data-line-number="5"></code></a></td>
+<td class="code"><code><a id="rest_code_851e60d43bf942a581402f9bbbd06bc7-5" name="rest_code_851e60d43bf942a581402f9bbbd06bc7-5"></a><span class="w">    </span><span class="k">and</span><span class="w"> </span><span class="n">height</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="p">(</span><span class="mi">72</span><span class="p">,</span><span class="w"> </span><span class="mi">74</span><span class="p">,</span><span class="w"> </span><span class="mi">76</span><span class="p">)</span>
 </code></td>
 </tr>
 </table></div></section>
@@ -356,7 +356,7 @@ S">
         </footer>
 </div>
                 <script src="../../assets/js/all-nocdn.js"></script><script>
-    baguetteBox.run('div#content', {
+    baguetteBox.run('main#content', {
         ignoreClass: 'islink',
         captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
     </script>
