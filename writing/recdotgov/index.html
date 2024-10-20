@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html prefix="
+        og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+    " vocab="http://ogp.me/ns" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>recdotgov | Michael Deckebach</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#3e5042">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="canonical" href="https://michaeldeckebach.com/writing/recdotgov/">
+<link rel="icon" href="../../files/favicon-16x16.png" sizes="16x16">
+<!--[if lt IE 9]><script src="../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-8HE6SJQ79H"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8HE6SJQ79H');
+</script><meta name="author" content="Michael Deckebach">
+<link rel="prev" href="../trip-report-desolation-seven-summits/" title="Trip Report: Desolation Seven Summits" type="text/html">
+<meta property="og:site_name" content="Michael Deckebach">
+<meta property="og:title" content="recdotgov">
+<meta property="og:url" content="https://michaeldeckebach.com/writing/recdotgov/">
+<meta property="og:description" content="Overview
+Excited to share a project that I've been working on: recdotgov
+recdotgov is a data engineering project built in Python to scrape, snapshot, and store backcountry permit availability data fro">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2024-10-19T13:35:35-07:00">
+<meta property="article:tag" content="Data">
+<meta property="article:tag" content="Data Engineering">
+<meta property="article:tag" content="SQL">
+</head>
+<body>
+    <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+    <div id="container">
+            <header id="header"><h1 id="brand"><a href="../../" title="Michael Deckebach" rel="home">
+
+        <span id="blog-title">Michael Deckebach</span>
+    </a></h1>
+
+        
+            <nav id="menu"><ul>
+<li><a href="../../adventures/">Adventures</a></li>
+                <li><a href="../">Writing</a></li>
+
+    
+    
+    
+    </ul></nav></header><main id="content"><article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name" itemprop="headline name"><a href="." class="u-url">recdotgov</a></h1>
+
+        <div class="metadata">
+            <p class="dateline">
+                2024-10-19
+            </p>
+            <aside class="postpromonav"><ul itemprop="keywords" class="tags">
+        Tags: 
+            <li><a class="tag p-category" href="../../categories/data/" rel="tag">Data</a></li>
+            <li><a class="tag p-category" href="../../categories/data-engineering/" rel="tag">Data Engineering</a></li>
+            <li><a class="tag p-category" href="../../categories/sql/" rel="tag">SQL</a></li>
+        </ul></aside>
+</div>
+        
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <section id="overview"><h2>Overview</h2>
+<p><strong>Excited to share a project that I've been working on:</strong> <a class="reference external" href="https://github.com/mdeckebach/recdotgov">recdotgov</a></p>
+<p><a class="reference external" href="https://github.com/mdeckebach/recdotgov">recdotgov</a> is a data engineering project built in Python to scrape, snapshot, and store backcountry permit availability data from <a class="reference external" href="https://www.recreation.gov/">www.recreation.gov</a>. Being able to snag a permit for the trailheads I want in the Eastern Sierra Nevada has always been tricky, so I figured it would be interesting to see if I could find any trends by tracking permit availability over time.</p>
+<p>I set up the script to run every 15 minutes on my Synology NAS, collecting any changes that occur between runs. I'll follow up with analysis of the data that this pipeline collects in the future.</p>
+<p>For now, I want to reflect on building <a class="reference external" href="https://github.com/mdeckebach/recdotgov">recdotgov</a> and share some lessons learned.</p>
+</section><section id="reflections"><h2>Reflections</h2>
+<section id="network-tools-open-data"><h3>1. Network Tools &amp; Open Data</h3>
+<p>The inspiration for this project was to create some sort of data engineering / automated ETL, as it's something I'm interested in growing into professionally. To do this sort of project, I needed a data source to work with, so <a class="reference external" href="https://www.recreation.gov/">www.recreation.gov</a> seemed like a great blend between my interests in <a class="reference external" href="../../categories/hiking/">hiking</a> and <a class="reference external" href="../../categories/data/">data</a>.</p>
+<p>I was jazzed to learn the site had a free API, <a class="reference external" href="https://ridb.recreation.gov/landing">RIDB 1.0.0</a>, but bummed to discover that the <code class="docutils literal">/reservations</code> endpoint didn't work. Fortunately, the internet came to my rescue, as I found <a class="reference external" href="https://emery-44439.medium.com/how-find-openings-in-rec-gov-campsites-using-dart-and-aws-lambda-9bfe3fe29369">this Medium article</a> which showed how someone had been able to find programmatic campsite data using developer tools.</p>
+<p>I tried the same approach, and after poking around I found that this url structure returns availability data programmatically:</p>
+<div class="code"><table class="codetable"><tr>
+<td class="linenos linenodiv"><a href="#rest_code_388f7c95c0274da8ad4472b27e57843d-1"><code data-line-number="1"></code></a></td>
+<td class="code"><code><a id="rest_code_388f7c95c0274da8ad4472b27e57843d-1" name="rest_code_388f7c95c0274da8ad4472b27e57843d-1"></a>https://www.recreation.gov/api/permitinyo/&lt;permit_id&gt;/availabilityv2?start_date=&lt;yyyy-mm-dd&gt;&amp;end_date=&lt;yyyy-mm-dd&gt;&amp;commercial_acct=&lt;false&gt;
+</code></td>
+</tr></table></div>
+<figure><img alt="/images/writing/recdotgov/img-1.jpg" src="../../images/writing/recdotgov/img-1.jpg"></figure><p>I don't know if it will work with any area, as the <code class="docutils literal">/permitinyo/</code> portion suggests it is at least regional to the Sierras, but I did confirm that it works for Yosemite National Park. Those are really the two backcountry zones I care about, so this is good enough for my purposes. One caveat to it is that your start &amp; end date arguments have to be the start and end of a month (i.e., the API only returns data in exactly 1 month chunks).</p>
+<p><strong>Takeaway:</strong> I got more comfortable using developer tools and learned about some undocumented APIs by trial and error. Don't be so quick to reach for BeautifulSoup!</p>
+</section><section id="etl-vs-elt"><h3>2. ETL vs ELT</h3>
+<p>Yes, I know the more modern approach in data engineering is ELT (load raw data, then transform), not ETL (transform the data, then load it to your destination). Despite this, I chose to follow an ETL pattern for <a class="reference external" href="https://github.com/mdeckebach/recdotgov">recdotgov</a> because I was worried about storage space on my local NAS.</p>
+<p>In retrospect, this approach made my project less modular than it could be. Because I'm doing all my transformation while data is in transit from source to database, any changes to source data could break my transformations (and thus pipeline). Furthermore, if I want to adjust my transformation logic (e.g., what fields I pull in or how they're modeled), that would cause breaking changes to the database table that might be unrecoverable.</p>
+<p>For someone who spends many hours a day writing dbt logic to transform data in a methodical stage → base [→ obt] → report structure, it feels like a rookie mistake to have my Python script be both responsible for moving the raw data from source to database as well as doing so in a way that provides a finished fact &amp; dim model.</p>
+<p><strong>Takeaway:</strong> If I were start over, I would probably follow an ELT approach and drop the raw data somewhere then separately load the data into my database. I would also use a tool like dbt to separate transformation from extraction. This would make <a class="reference external" href="https://github.com/mdeckebach/recdotgov">recdotgov</a> more modular and maintainable.</p>
+</section><section id="passwords-environmental-variables"><h3>3. Passwords &amp; Environmental Variables</h3>
+<p>This project required user credentials to access my MariaDB. I'd never done anything that required handling secret credentials like this, so I wasn't really sure how to go about it.</p>
+<p>I struggled for a long time trying different approaches to give my program access to the necessary credentials without somehow exposing them in git or the Docker container.</p>
+<p>I ended up stumbling upon <a class="reference external" href="https://github.com/DSKunth/ETL-Pipeline">this repository</a>, which offered a solution using a <strong>.env</strong> file that was included in both .gitignore and .dockerignore. I like that the use of <strong>.env.example</strong> makes it simple and easy for anyone who wants to use the program, so that's what I went with.</p>
+<figure><img alt="/images/writing/recdotgov/img-2.jpg" src="../../images/writing/recdotgov/img-2.jpg"></figure><p><strong>Takeaway:</strong> Always separate configuration details like environmental variables from logical code. For this project, I used a .env file that I ignored from git. There may be better approaches, but this seems to do the job.</p>
+</section><section id="logging"><h3>4. Logging</h3>
+<p>This was the first project I've ever implemented logging for. Typically, I've just done the beginner <code class="docutils literal">print()</code> method while debugging, but because I wanted to schedule and automate my script, keeping some sort of log felt valuable for when the pipeline inevitably breaks.</p>
+<p>Overall, I'm pretty happy with how I implemented this. I do think I could have used logging levels more intelligently to distinguish between debugging during development (which I'd want to view in the terminal), versus production job logging (where I really only care about knowing whether the job succeeded and how many records were inserted into the database).</p>
+<p>Additionally, I struggled a bit dealing with logging and Docker containers, as with each run the log file is written within its own container. I think there is a way to fix this using Docker volumes, but I didn't care enough to figure this out.</p>
+<p><strong>Takeaway:</strong> Logging levels may have been better configured to account for development vs prod environments. When logging across multiple Docker containers, look into using volumes to create a continuous record.</p>
+</section><section id="improvements"><h3>5. Improvements</h3>
+<p>Finally, there are a handful of changes I could make to improve the code:</p>
+<blockquote>
+<ul class="simple">
+<li><p>The way I wrote the pipeline, <code class="docutils literal">dim_entry_points</code> gets overwritten every run. That data rarely changes, so rewriting this table is wasteful even though the record count is small. I could rework the code so that <code class="docutils literal">entry_points.py</code> only runs less frequently.</p></li>
+<li><p>I should add unit testing.</p></li>
+<li><p>I could reduce repetition and make things more DRY. For example, the env variables code repeats in <code class="docutils literal">main.py</code>, <code class="docutils literal">entry_points.py</code>, and <code class="docutils literal">snapshots.py</code>. How could I read in these variables only once?</p></li>
+<li><p>Additionally, a lot of the ETL code repeats between <code class="docutils literal">entry_points.py</code> and <code class="docutils literal">snapshots.py</code>. I chose to write those files as a sequence of <code class="docutils literal">extract()</code>, <code class="docutils literal">transform()</code>, and <code class="docutils literal">load()</code> functions, but perhaps I could refactor the code so that the URLs &amp; database table names are passed around as variables to avoid repeating a lot of the same procedural code.</p></li>
+</ul>
+</blockquote>
+</section></section>
+</div>
+    
+</article></main><footer id="footer"><p>© 2017-2024   |   <a href="mailto:michael.deckebach@gmail.com">michael.deckebach@gmail.com</a></p>
+            
+        </footer>
+</div>
+                <script src="../../assets/js/all-nocdn.js"></script><script>
+    baguetteBox.run('main#content', {
+        ignoreClass: 'islink',
+        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
+    </script>
+</body>
+</html>

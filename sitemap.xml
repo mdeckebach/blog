@@ -15,7 +15,11 @@
  </url>
  <url>
   <loc>https://michaeldeckebach.com/categories/</loc>
-  <lastmod>2024-08-24T19:49:00Z</lastmod>
+  <lastmod>2024-10-19T22:54:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://michaeldeckebach.com/categories/data-engineering/</loc>
+  <lastmod>2024-10-19T22:54:00Z</lastmod>
  </url>
  <url>
   <loc>https://michaeldeckebach.com/categories/data/</loc>
@@ -107,7 +111,7 @@
  </url>
  <url>
   <loc>https://michaeldeckebach.com/writing/</loc>
-  <lastmod>2024-09-08T14:28:00Z</lastmod>
+  <lastmod>2024-10-19T22:54:00Z</lastmod>
  </url>
  <url>
   <loc>https://michaeldeckebach.com/writing/a-life-update/</loc>
@@ -228,6 +232,10 @@
  <url>
   <loc>https://michaeldeckebach.com/writing/qa-with-thrupacks-paul-thomas/</loc>
   <lastmod>2024-08-23T23:10:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://michaeldeckebach.com/writing/recdotgov/</loc>
+  <lastmod>2024-10-19T22:54:00Z</lastmod>
  </url>
  <url>
   <loc>https://michaeldeckebach.com/writing/right-of-way-hiking-rules/</loc>
