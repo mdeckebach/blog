@@ -362,4 +362,4 @@ Books
 .. _`A Wee Walk in the Wilderness`: http://www.lovelavender.co.nz/Books.html
 .. _`End to End New Zealand`: http://campfirecreations.co.nz/
 .. _`100 Days Walking Te Araroa`: https://www.amazon.com/100-Days-Walking-Te-Araroa-ebook/dp/B018D9WAES
-.. _`One Step at a Time: From Cape Reinga to Bluff`: https://www.amazon.com/One-Step-Time-Reinga-Araroa-ebook/dp/B008E31A3G/ref=sr_1_1?s=digital-text&ie=UTF8&qid=1498694671&sr=1-1&keywords=te+araroa
+.. _`One Step at a Time: From Cape Reinga to Bluff`: https://www.amazon.com/One-Step-Time-Growth-Araroa/
